@@ -85,6 +85,7 @@
                 <div class="d-flex mt-5 w-50">
                     <input name="search_text" type="search" class="form-control" placeholder="Enter text to seach"
                         required>
+               <!-- -->  
                     <button type="submit" class="ml-4 btn btn-primary">Search</button>
                 </div>
 
@@ -96,18 +97,14 @@
 
         <div class="d-flex justify-content-center w-100">
             <div class="d-flex justify-content-around w-50 row-2">
-                {{-- <button class="btn btn-success px-5 py-3">I've Lost Something </button> --}}
-                {{-- <button class="btn btn-success px-5 py-3">I've Found Something</button> --}}
-                <a class="btn btn-success px-5 py-3" href="/create_post" role="button">I've Lost Something</a>
-                
-                <a class="btn btn-success px-5 py-3" href="/create_post" role="button">I've Found Something</a>
-
+                <button class="btn btn-success px-5 py-3">I've Lost Something </button>
+                <button class="btn btn-success px-5 py-3">I've Found Something</button>
             </div>
         </div>
 
         <div class="home-page-counter mb-5">
-            <h2><strong id="count"></strong></h2>
-          <h4>People found their lost items</h4>
+            <h2><strong>156</strong></h2>
+            <p>People found their lost item</p>
         </div>
     </div>
     <br>
@@ -120,32 +117,13 @@
                 </script> | Lost & Found | All Rights Reserved
             </p>
             <div class="footer-links d-flex justify-content-around container mt-5">
-                <a href="/about">About Us</a>
-                <a href="/toc">Terms & Conditions</a>
-                <a href="/privacy-policy">Privacy Policy</a>
-                <a href="/contact">Contact Us</a>
+                <a href="">About Us</a>
+                <a href="">Terms & Conditions</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Contact Us</a>
             </div>
         </div>
     </footer>
-
-
-
-    <script>
-        function animatePostsCounter(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        animatePostsCounter(document.getElementById("count"), 0, {{json_encode(50)}}, 1200);
-    </script>
 
 
 </body>
