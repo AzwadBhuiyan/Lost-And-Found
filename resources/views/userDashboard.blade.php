@@ -13,6 +13,42 @@
 
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <a class="navbar-brand ml-5" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+        <div class="d-flex navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/user_dashboard">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Urgent</a>
+            </li>
+            &nbsp;
+            &nbsp;&nbsp;
+            &nbsp;
+            
+            &nbsp;
+            &nbsp;
+        </div>
+    </div>
+</nav>
  
  
     <section class="section1">
