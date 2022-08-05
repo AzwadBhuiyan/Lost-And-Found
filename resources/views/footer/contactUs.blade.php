@@ -100,8 +100,7 @@
                   </form>
     
     
-            </div>
-    
+            </div>    
     
             <div class="col-lg-6 order-1 mb-4 order-lg-1 mb-lg-0">
               <img src="https://as2.ftcdn.net/v2/jpg/01/37/52/13/1000_F_137521329_Wf2xCXOsL8haVaZLiPx10T5e91HdIcke.jpg" class="img-fluid">
@@ -110,7 +109,34 @@
     
           </div>
         </div>
-       </section> 
+        
+        
+
+
+       </section>    
+       <footer class="bg-dark footer mt-lg-5">
+        <hr>
+        <div class="container-fluid text-center text-white">
+            <p>Copyright&#9400;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> | Lost & Found | All Rights Reserved
+            </p>
+            <div class="footer-links d-flex justify-content-around container mt-5">
+                <a href="/about">About Us</a>
+                <a href="/toc">Terms & Conditions</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    
+       
+      
+      
+       
+      
  
  
 
