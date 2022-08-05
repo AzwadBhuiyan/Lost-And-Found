@@ -608,7 +608,7 @@
                     
                      
 
-                    <div class="card text-white bg-light m-3 cardDiv2 " style="width: fit-content; margin: 15px; ">
+                    <div class="card text-white bg-light m-3 cardDiv2  " style="width: fit-content; margin: 15px; ">
                       <img src="https://t3.ftcdn.net/jpg/02/72/40/44/360_F_272404412_MD9Qnk52bpTk9BEhpq2ZofYupyF8UWbg.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
                         <div class="row">
