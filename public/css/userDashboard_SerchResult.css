@@ -228,6 +228,19 @@ p{
     letter-spacing: 1px;
     font-weight: 700; 
 }
+.left-image {
+    object-fit: cover;
+    width: 230px;
+    height: 230px !important;
+}
+
+.right-image {
+    object-fit: cover;
+    width: 350px;
+    height: 350px !important;
+    align-self: center;
+    object-fit: scale-down;
+}
 
 
 
