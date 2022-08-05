@@ -243,3 +243,6 @@ button{
         flex-direction: column;
     }
   }
+  .footer p{
+    color: #fff;
+}
