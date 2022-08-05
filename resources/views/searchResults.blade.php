@@ -20,11 +20,15 @@
            <!--  left_section  navbar-light bg-light -->
         <div class="container col-lg-8   order-2 order-sm-1   order-md-1">
 
-            <nav class="navbar navbar-dark  text-bg-primary">
+           <!-- <nav class="navbar navbar-dark  text-bg-primary">
                 <div class="container-fluid justify-content-center">
                   <span class="navbar-brand mb-0 h1">Regular Post</span>
                 </div>
-              </nav>
+              </nav> -->
+
+              <div class="navleft"> 
+                <p>Regular Post</p>
+              </div>
 
               
 
@@ -238,11 +242,14 @@
         <div class="container col-lg-4   order-1 order-sm-2   order-md-2  ">
 
 
-            <nav class="navbar navbar-dark bg-danger  ">
+          <!--  <nav class="navbar navbar-dark bg-danger  ">
                 <div class="container-fluid  justify-content-center">
                   <span class="navbar-brand mb-0 h1">Urgent Post</span>
                 </div>
-              </nav>
+              </nav> -->
+              <div class="navright"> 
+                <p>Urgent Post</p>
+              </div>
 
 
 

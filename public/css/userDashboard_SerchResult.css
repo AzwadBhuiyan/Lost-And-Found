@@ -21,8 +21,8 @@ input[type=number] ::-webkit-outer-spin-button {
 
 body{
     background-color: var(--bg-whit);
-    padding: 0px;
-    
+    padding: 0px;   
+    margin: 0; 
     overflow: scroll;
    
     
@@ -57,25 +57,26 @@ body{
 
 .left_section{
     width: auto;
-    height: 800px; 
+    height: auto;
    
     line-height: 3em; 
-    overflow:scroll; 
-    border: thin var(--secondary-color); 
     
+    border: thin var(--secondary-color); 
+    padding: 5px;
     background-color:var(--primary2-color);
+    margin: 0;
     
 }
 .right_section{
-    width: auto;
-   height: 800px;
-   
+    width: auto; 
+    height: auto;  
 
     line-height: 3em; 
-    overflow:scroll; 
+    
     border: thin var(--primary2-color); 
     padding: 5px;
     background-color:var(--primary2-color);
+    margin: 0;
 }
 
 
@@ -172,7 +173,9 @@ body{
 /**/
 .section1{
    
-    background-color: #030929;
+    background-color:var(--primary2-color);
+    margin: 0;
+    padding: 0;
 }
 /**/
 
@@ -241,9 +244,40 @@ p{
     align-self: center;
     object-fit: scale-down;
 }
+.navleft{
+    
+    text-align: center;    
+    width: auto;
+    height: 35px;
+    padding: 8px;
+    
+}
+.navleft p{
+    color: blue;
+    font-size: 20px;
+    line-height: 28px; 
+    letter-spacing: 1px;   
+    font-weight: 700;
+    
+   
+}
 
 
-
+.navright{
+    
+    text-align: center;    
+    width: auto;
+    height: 35px;
+    padding: 8px;
+    
+}
+.navright p{
+    color: red;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
 
 
 
