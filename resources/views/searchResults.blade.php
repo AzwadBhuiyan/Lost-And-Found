@@ -12,6 +12,42 @@
 
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <a class="navbar-brand ml-5" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+        <div class="d-flex navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/user_dashboard">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Urgent</a>
+            </li>
+            &nbsp;
+            &nbsp;&nbsp;
+            &nbsp;
+            
+            &nbsp;
+            &nbsp;
+        </div>
+    </div>
+</nav>
  
  
     <section class="section1">
@@ -39,6 +75,117 @@
 
                       <!--  new -->
 
+
+
+                      <div class="card text-white bg-light mb-3 m-4 cardDiv  " style="max-width: fit-content; margin: 12px;  ">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="https://t3.ftcdn.net/jpg/02/72/40/44/360_F_272404412_MD9Qnk52bpTk9BEhpq2ZofYupyF8UWbg.jpg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-7 col-sm-4">
+                                  <h5 class="card-title lh-base">Card title</h5>
+                                  <h6 class="text-opacity-70">Location: Dhaka</h6>                                  
+                                </div>
+                                <div class="col-5  col-sm-8">
+                                  <p class="card-text d-flex justify-content-end"><small class="text-muted">01/09/2022</small></p>
+                                </div>
+                              </div> 
+                              <p class="card-text   lh-sm  text-wrap"> Description: This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      
+
+                      <div class="card text-white bg-light mb-3 m-4 cardDiv  " style="max-width: fit-content; margin: 12px;  ">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="https://t3.ftcdn.net/jpg/02/72/40/44/360_F_272404412_MD9Qnk52bpTk9BEhpq2ZofYupyF8UWbg.jpg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-7 col-sm-4">
+                                  <h5 class="card-title lh-base">Card title</h5>
+                                  <h6 class="text-opacity-70">Location: Dhaka</h6>                                  
+                                </div>
+                                <div class="col-5  col-sm-8">
+                                  <p class="card-text d-flex justify-content-end"><small class="text-muted">01/09/2022</small></p>
+                                </div>
+                              </div> 
+                              <p class="card-text   lh-sm  text-wrap"> Description: This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+
+
+
+                      <div class="card text-white bg-light mb-3 m-4 cardDiv  " style="max-width: fit-content; margin: 12px;  ">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="https://t3.ftcdn.net/jpg/02/72/40/44/360_F_272404412_MD9Qnk52bpTk9BEhpq2ZofYupyF8UWbg.jpg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-7 col-sm-4">
+                                  <h5 class="card-title lh-base">Card title</h5>
+                                  <h6 class="text-opacity-70">Location: Dhaka</h6>                                  
+                                </div>
+                                <div class="col-5  col-sm-8">
+                                  <p class="card-text d-flex justify-content-end"><small class="text-muted">01/09/2022</small></p>
+                                </div>
+                              </div> 
+                              <p class="card-text   lh-sm  text-wrap"> Description: This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      
+
+                      <div class="card text-white bg-light mb-3 m-4 cardDiv  " style="max-width: fit-content; margin: 12px;  ">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="https://t3.ftcdn.net/jpg/02/72/40/44/360_F_272404412_MD9Qnk52bpTk9BEhpq2ZofYupyF8UWbg.jpg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-7 col-sm-4">
+                                  <h5 class="card-title lh-base">Card title</h5>
+                                  <h6 class="text-opacity-70">Location: Dhaka</h6>                                  
+                                </div>
+                                <div class="col-5  col-sm-8">
+                                  <p class="card-text d-flex justify-content-end"><small class="text-muted">01/09/2022</small></p>
+                                </div>
+                              </div> 
+                              <p class="card-text   lh-sm  text-wrap"> Description: This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
 
                       <div class="card text-white bg-light mb-3 m-4 cardDiv  " style="max-width: fit-content; margin: 12px;  ">
@@ -386,6 +533,22 @@
         </div>
 
     </section>
+    <footer class="bg-dark footer mt-lg-5">
+      <hr>
+      <div class="container-fluid text-center text-white">
+          <p>Copyright&#9400;
+              <script>
+                  document.write(new Date().getFullYear())
+              </script> | Lost & Found | All Rights Reserved
+          </p>
+          <div class="footer-links d-flex justify-content-around container mt-5">
+              <a href="/about">About Us</a>
+              <a href="/toc">Terms & Conditions</a>
+              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="/contact">Contact Us</a>
+          </div>
+      </div>
+  </footer>
 
 
 <!--Boostrap 5 CDN linl --> 
