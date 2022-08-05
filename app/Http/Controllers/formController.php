@@ -28,21 +28,9 @@ class formController extends Controller
 
     }
 
-    private function convertToDollar($taka)
-    {
-        $res = $taka / 84.0;
-        return round($res, 1);
-        // return $res;
-    }
-
-    public function loadConvertResult(Request $req)
-    {
-        $res['dollar'] = $this->convertToDollar($req->taka);
-
-        return view('formView', $res);
-    }
 
 
+//test login
     public function login(Request $req)
     {
         // dd($req);
@@ -56,12 +44,7 @@ class formController extends Controller
         return "password is wrong";
     }
 
-    public function getApple($val, $val2, $val3)
-    {
-        // dd($val, $val2, $val3);
-        return view('formView');
-    }
-
+    //test create customer
     public function createNewCustomer(Request $req)
     {
         $c = new Customer;
@@ -76,6 +59,9 @@ class formController extends Controller
 
         return redirect()->route('home');
     }
+
+
+    //Home page Search Engine
 
     public function searchItem(Request $req)
     {
@@ -123,22 +109,5 @@ class formController extends Controller
 
 
 
-    public function create()
-    {
-        // $customers = DB::table('customers')->all(); //Select * FROM customers
-        dd("Create");
-    }
-    public function read()
-    {
-        $customers = DB::table('customers')->where('name', 'Azwad')->get(); //Select * FROM customers
-        dd($customers);
-    }
-    public function update()
-    {
-        dd('Update');
-    }
-    public function delete()
-    {
-        dd('Delete');
-    }
+    
 }
