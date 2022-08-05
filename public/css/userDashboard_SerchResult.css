@@ -328,6 +328,16 @@ p{
     }
   }
 
+ 
+
+
+  .right_section .card{
+    border-color:#FD4766;
+  }
+  .left_section .card{
+    border-color:#3366ff;
+  }
+
 
 
 
