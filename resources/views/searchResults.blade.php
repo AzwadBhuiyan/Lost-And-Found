@@ -41,7 +41,7 @@
     @include('navBar.nav', ['data' => ''])
 
 
-
+ 
 
   
 
