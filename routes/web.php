@@ -44,15 +44,18 @@ Route::get('/register', function () {
 
 //forms 
 Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
-Route::post('/search', [formController::class, 'searchItem'])->name("search");
 
-//test
-Route::get('/dashboard/{apple}/{apple2}/{apple3}', [formController::class, 'getApple'])->name("appleRoute");
+
+//login
+Route::get('/login', [globalController::class, 'load_login']);
+
 
 //global
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/search_results', [globalController::class, 'load_searchResults'])->name("searchResults");
 Route::get('/view_posts', [globalController::class, 'load_viewPosts'])->name("viewPosts");
+Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
+
 
 //user
 Route::get('/create_post', [userController::class, 'load_createPost'])->name("createPost_UI");

@@ -6,6 +6,7 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class formController extends Controller
 {
     //
@@ -63,49 +64,8 @@ class formController extends Controller
 
     //Home page Search Engine
 
-    public function searchItem(Request $req)
-    {
-        //dd($req);
-        $result = DB::table('posts')->where('category', $req->catagory)
-            ->where('location', $req->location)->get();
+    
 
-        $search_text = explode(' ', $req->search_text);
-        $list = array();
-
-        $max = -1;
-        foreach ($result as $value) {
-            $title = explode(' ', $value->title);
-            $count = 0;
-            foreach ($title as $value2) {
-                foreach ($search_text as $value3) {
-                    if ($value2 === $value3) {
-                        $count++;
-                    }
-                }
-                if ($max < $count) {
-                    $max = $count;
-                }
-            }
-        }
-
-        foreach ($result as $value) {
-            $title = explode(' ', $value->title);
-            $count = 0;
-            foreach ($title as $value2) {
-                foreach ($search_text as $value3) {
-                    if ($value2 === $value3) {
-                        $count++;
-                    }
-                }
-                if ($count === $max) {
-                    array_push($list, $value);
-                    $count = 0;
-                }
-            }
-        }
-
-        dd($list);
-    }
 
 
 
