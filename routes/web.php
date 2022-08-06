@@ -70,7 +70,3 @@ Route::get('/contact', [globalController::class, 'load_contactUs'])->name("conta
 Route::get('/privacy-policy', [globalController::class, 'load_privacyPolicy'])->name("privacyPolicy");
 Route::get('/contact', [globalController::class, 'load_contactUs'])->name("contactUs");
 Route::get('/toc', [globalController::class, 'load_toc'])->name("toc");
-
-
-
-
