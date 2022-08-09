@@ -153,11 +153,7 @@ body{
 }
 
 
-.contact_wrapper img{
-    max-height: 80%;
-    max-width: 80%;
 
-}
 
 .cardDiv{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -233,19 +229,22 @@ p{
     letter-spacing: 1px;
     font-weight: 700; 
 }
-.left-image {
+.limg {
     object-fit: cover;
     width: 230px;
     height: 230px !important;
 }
 
-.right-image {
+
+
+.rimg {
     object-fit: cover;
     width: 350px;
     height: 350px !important;
     align-self: center;
     object-fit: scale-down;
 }
+
 .navleft{
     
     text-align: center;    
