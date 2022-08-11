@@ -119,7 +119,6 @@
 
             </div>
 
-
             <!--  left_section end -->
 
 

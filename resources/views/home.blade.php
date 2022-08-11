@@ -61,8 +61,7 @@
 
         <div class="d-flex justify-content-center w-100">
             <div class="d-flex justify-content-around w-50 row-2">
-                {{-- <button class="btn btn-success px-5 py-3">I've Lost Something </button> --}}
-                {{-- <button class="btn btn-success px-5 py-3">I've Found Something</button> --}}
+               
                 <a class="btn btn-success px-5 py-3" href="/create_post" role="button">I've Lost Something</a>
                 
                 <a class="btn btn-success px-5 py-3" href="/create_post" role="button">I've Found Something</a>
