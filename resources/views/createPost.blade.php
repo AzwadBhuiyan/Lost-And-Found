@@ -35,7 +35,7 @@
       <div class="row g-3 my-4">
         <div class="col-md-6 col-lg-6">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Lost Item:</span>
+            <span class="text-muted">Item:</span>
           </h4>
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -106,9 +106,8 @@
                 <select class="form-select" id="state" required="">
                   <option value="">-Select-</option>
                   <option>Electronics</option>
-                  <option>Appliance and Gadget</option>
-                  <option>Money</option>
-                  <option>Person</option>
+                  <option>Pet & Animals</option>
+                  <option>Documents</option>
                   
                   
                 </select>
@@ -123,12 +122,7 @@
                   <option value="">-Select-</option>
                   <option>Dhaka</option>
                   <option>Chittagong</option>
-                  <option>Barisal</option>
                   <option>Khulna</option>
-                  <option>Mymensingh</option>
-                  <option>Rajshahi</option>
-                  <option>Rangpur </option>
-                  <option>Sylhet</option>
                   
                 </select>
                 <div class="invalid-feedback">
