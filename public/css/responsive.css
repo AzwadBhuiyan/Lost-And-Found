@@ -31,7 +31,10 @@
 
 }
 
-
+.property-form-block{
+    margin: 10%;
+    padding: 10px;
+}
 body{
     font-family: var(--secondary-font);
     width: 100%;
