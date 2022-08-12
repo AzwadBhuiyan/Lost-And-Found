@@ -16,25 +16,15 @@ class userController extends Controller
 
     public function load_userDashboard(Request $req)
     {
-//......................................
         $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->get();
-        // dd($result2);
-        // $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->take(3)->get();
-       
+        
         $list = array();
-       
-       
 
-       
-        // right search results;
-        $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', true)->get();
-        //$result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', true)->take(3)->get();
+        $user_result = DB::table('posts')->where('email',  session('email'))->get();
 
-        // dd($result['rightResults']);
-        $sendData['leftResults'] = $result2;
-        $sendData['rightResults'] = $result;   
+        $sendData['leftResults'] = $user_result;
 
-        return view('userDashboard',$sendData);
+        return view('userDashboard', $sendData);
     }
 //....................................................
 
