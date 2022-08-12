@@ -21,70 +21,70 @@
 
     <body>
 
-<div class="container1">
-  <form id="form">
-    <h3>Contact Us</h3>
-    <input type="text" name="name" id="name" placeholder="Your Name" required>
-    <input type="text" name="email" id="email"  placeholder="Your Email" required>
-    <input type="text" name="phone" id="phone" placeholder="Your Phone no." required>
-    <textarea input type="text" name="message" id="message" rows="4" placeholder="Your Name" required></textarea>
-    <input type="submit" id="button" value="Send Email" >
-  </form>
-  
-  
-</div>
+          <div class="container1">
+            <form id="form">
+              <h3>Contact Us</h3>
+              <input type="text" name="name" id="name" placeholder="Your Name" required>
+              <input type="text" name="email" id="email"  placeholder="Your Email" required>
+              <input type="text" name="phone" id="phone" placeholder="Your Phone no." required>
+              <textarea input type="text" name="message" id="message" rows="4" placeholder="Your Name" required></textarea>
+              <input type="submit" id="button" value="Send Email" >
+            </form>
+            
+            
+          </div>
 
-<!--Webside email: lostandfound984@gmail.com   password:lost1and2found3 -->
+          <!--Webside email: lostandfound984@gmail.com   password:lost1and2found3 -->
 
-<script type="text/javascript"
-src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+          <script type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<script type="text/javascript">
-emailjs.init('i6_zk-Jc2ba664hFg')
-</script>
+          <script type="text/javascript">
+          emailjs.init('i6_zk-Jc2ba664hFg')
+          </script>
 
-<script>const btn = document.getElementById('button');
+          <script>const btn = document.getElementById('button');
 
-  document.getElementById('form')
-  .addEventListener('submit', function(event) {
-    event.preventDefault();
+            document.getElementById('form')
+            .addEventListener('submit', function(event) {
+              event.preventDefault();
 
-    btn.value = 'Sending...';
+              btn.value = 'Sending...';
 
-    const serviceID = 'default_service';
-    const templateID = 'template_er4jx2h';
+              const serviceID = 'default_service';
+              const templateID = 'template_er4jx2h';
 
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
-        btn.value = 'Send Email';
-        alert('Sent!');
-      }, (err) => {
-        btn.value = 'Send Email';
-        alert(JSON.stringify(err));
-      });
-  });
-  </script> 
+              emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                  btn.value = 'Send Email';
+                  alert('Sent!');
+                }, (err) => {
+                  btn.value = 'Send Email';
+                  alert(JSON.stringify(err));
+                });
+            });
+            </script> 
 
-<footer class="bg-dark footer ">
-    
-    <div class="container-fluid text-center text-white">
-        <p>Copyright&#9400;
-            <script>
-                document.write(new Date().getFullYear())
-            </script> | Lost & Found | All Rights Reserved
-        </p>
-        <div class="footer-links d-flex justify-content-around container mt-5">
-            <a href="">About Us</a>
-            <a href="">Terms & Conditions</a>
-            <a href="">Privacy Policy</a>
-            <a href="">Contact Us</a>
-        </div>
-    </div>
-</footer>
+          <footer class="bg-dark footer ">
+              
+              <div class="container-fluid text-center text-white">
+                  <p>Copyright&#9400;
+                      <script>
+                          document.write(new Date().getFullYear())
+                      </script> | Lost & Found | All Rights Reserved
+                  </p>
+                  <div class="footer-links d-flex justify-content-around container mt-5">
+                      <a href="">About Us</a>
+                      <a href="">Terms & Conditions</a>
+                      <a href="">Privacy Policy</a>
+                      <a href="">Contact Us</a>
+                  </div>
+              </div>
+          </footer>
 
-  
+            
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>      
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>      
 
 
 </body>
