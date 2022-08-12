@@ -17,30 +17,7 @@ use App\Http\Controllers\globalController;
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
 
-Route::get('/form', function () {
-    return view('successValidation');
-})->name('loadSuccessForm');
-
-
-Route::get('/login', function () {
-    return view('logIn');
-})->middleware('loginAuth')->name('logIn');
-
-Route::get('/logout', function () {
-        session()->pull('user');
-        return redirect()->route('home');
-})->name('logOut');
-
-
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-*/
 
 //forms 
 Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
