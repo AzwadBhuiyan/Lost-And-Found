@@ -340,6 +340,20 @@ p{
     border-color:#3366ff;
     
   }
+  .left-image {
+    object-fit: cover;
+    width: 230px;
+    height: 230px !important;
+}
+
+
+.right-image {
+    object-fit: cover;
+    width: 350px;
+    height: 350px !important;
+    align-self: center;
+    object-fit: scale-down;
+}
 
 
 
