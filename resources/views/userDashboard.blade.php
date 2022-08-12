@@ -34,7 +34,7 @@
                 </div>
               </nav>  -->
               <div class="navleft"> 
-                <p>Regular Post</p>
+                <p>My Posts</p>
               </div>
               
 
