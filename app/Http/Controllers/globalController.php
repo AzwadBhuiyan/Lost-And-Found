@@ -3,19 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class globalController extends Controller
 {
     //
+
+    public function load_login()
+    {
+        return view('login');
+    }
     public function load_homePage()
     {
         return view('home');
     }
 
-    public function load_searchResults()
-    {
-        return view('searchResults');
-    }
 
     public function load_viewPosts()
     {
@@ -53,7 +56,56 @@ class globalController extends Controller
     //     return view('home', $counter);
     // }
 
-    
+
+    //search
+    public function load_searchResults(Request $req)
+    {
+        $result = DB::table('posts')->where('category', $req->category)
+            ->where('location', $req->location)->where('status', '!=', 'archived')->where('urgent', false)->get();
+        // dd($result);
+
+        $search_text = explode(' ', $req->search_text);
+        $list = array();
+
+        $max = -1;
+        foreach ($result as $value) {
+            $title = explode(' ', $value->title);
+            $count = 0;
+            foreach ($title as $value2) {
+                foreach ($search_text as $value3) {
+                    if ($value2 === $value3) {
+                        $count++;
+                    }
+                }
+                if ($max < $count) {
+                    $max = $count;
+                }
+            }
+        }
+
+        foreach ($result as $value) {
+            $title = explode(' ', $value->title);
+            $count = 0;
+            foreach ($title as $value2) {
+                foreach ($search_text as $value3) {
+                    if ($value2 === $value3) {
+                        $count++;
+                    }
+                }
+                if ($count === $max) {
+                    array_push($list, $value);
+                    $count = 0;
+                }
+            }
+        }
+        // right search results;
+        $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', true)->take(3)->get();
+
+        // dd($result['rightResults']);
+        $sendData['leftResults'] = $list;
+        $sendData['rightResults'] = $result;
+        return view('searchResults', $sendData);
+    }
 
 
 

@@ -1,5 +1,10 @@
 
 /* genral*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
  
 :root {
@@ -22,17 +27,14 @@
 body{
     font-family: var(--primary-font);
     background-color:var(--bg-dark-blue);
-    
+    height: 800px;
+    background-color: var(--secondary-color);
+    margin: 30px;
+
     
 }
 
-a{
-    text-decoration: none;
-    font-size: 15px;
-}
-label{
-    font-size: 15px;
-}
+
 
 /* custom css*/
 ::-webkit-scrollbar{
@@ -49,8 +51,10 @@ input[type=number] ::-webkit-outer-spin-button {
 }
 
 section{
-    padding: 50px 0;
+    padding: 50px;    
     background-color: var(--secondary-color);
+    height: auto;
+    overflow: scroll;
 }
 
 .main-btn{
@@ -195,3 +199,50 @@ button{
 
 
 
+.footer{
+   
+    height: 200px;
+}
+
+.footer-links{
+    color: rgb(216, 216, 216);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.footer-links>a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-links>a:hover, .footer-links>a:active{
+    color: rgb(161, 161, 161);
+}
+
+@media only screen and (max-width: 630px) {
+    .row-1{
+        flex-direction: column;
+    }
+    .row-1>div{
+        margin-right: 10px;
+        margin-left: 10px;
+        width: auto !important;
+    }
+
+    .row-2>button{
+         padding: 10px 30px !important;
+         margin: 10px;
+    }
+
+    .footer{
+        width: 104%;
+        height: auto;
+    }
+
+    .footer-links{
+        flex-direction: column;
+    }
+  }
+  .footer p{
+    color: #fff;
+}

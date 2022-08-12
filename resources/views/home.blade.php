@@ -20,42 +20,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <a class="navbar-brand ml-5" href="#">Logo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            </ul>
-
-            <div class="d-flex navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/user_dashboard">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Urgent</a>
-                </li>
-                &nbsp;
-                &nbsp;&nbsp;
-                &nbsp;
-                <button class="btn btn-primary">Log In</button>
-                &nbsp;
-                &nbsp;
-            </div>
-        </div>
-    </nav>
+    @include('navBar.nav', ['data' => 'home'])
 
     <div class="container">
         <h1 class="text-center my-5 display-5">Find Your Lost Item</h1>
@@ -96,8 +61,7 @@
 
         <div class="d-flex justify-content-center w-100">
             <div class="d-flex justify-content-around w-50 row-2">
-                {{-- <button class="btn btn-success px-5 py-3">I've Lost Something </button> --}}
-                {{-- <button class="btn btn-success px-5 py-3">I've Found Something</button> --}}
+               
                 <a class="btn btn-success px-5 py-3" href="/create_post" role="button">I've Lost Something</a>
                 
                 <a class="btn btn-success px-5 py-3" href="/create_post" role="button">I've Found Something</a>
@@ -110,23 +74,7 @@
           <h4>People found their lost items</h4>
         </div>
     </div>
-    <br>
-    <footer class="bg-dark footer mt-lg-5">
-        <hr>
-        <div class="container-fluid text-center text-white">
-            <p>Copyright&#9400;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script> | Lost & Found | All Rights Reserved
-            </p>
-            <div class="footer-links d-flex justify-content-around container mt-5">
-                <a href="/about">About Us</a>
-                <a href="/toc">Terms & Conditions</a>
-                <a href="/privacy-policy">Privacy Policy</a>
-                <a href="/contact">Contact Us</a>
-            </div>
-        </div>
-    </footer>
+   @extends('footer.footer')
 
 
 

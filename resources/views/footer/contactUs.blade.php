@@ -20,43 +20,7 @@
 
     
 <body  data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="75">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <a class="navbar-brand ml-5" href="#">Logo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            </ul>
-
-            <div class="d-flex navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Urgent</a>
-                </li>
-                &nbsp;
-                &nbsp;&nbsp;
-                &nbsp;
-                
-                &nbsp;
-                &nbsp;
-            </div>
-        </div>
-    </nav>
+  @include('navBar.nav', ['data' => ''])
 
 
 
@@ -108,8 +72,7 @@
                   </form>
     
     
-            </div>
-    
+            </div>    
     
             <div class="col-lg-6 order-1 mb-4 order-lg-1 mb-lg-0">
               <img src="https://as2.ftcdn.net/v2/jpg/01/37/52/13/1000_F_137521329_Wf2xCXOsL8haVaZLiPx10T5e91HdIcke.jpg" class="img-fluid">
@@ -118,7 +81,35 @@
     
           </div>
         </div>
-       </section> 
+        
+        
+
+
+       </section>    
+      <!-- <footer class="bg-dark footer mt-lg-5">
+        <hr>
+        <div class="container-fluid text-center text-white">
+            <p>Copyright&#9400;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> | Lost & Found | All Rights Reserved
+            </p>
+            <div class="footer-links d-flex justify-content-around container mt-5">
+                <a href="/about">About Us</a>
+                <a href="/toc">Terms & Conditions</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+        </div>
+    </footer> -->
+    @extends('footer.footer')
+
+    
+       
+      
+      
+       
+      
  
  
 
