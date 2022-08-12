@@ -5,6 +5,7 @@ use App\Http\Controllers\formController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\globalController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Http\Controllers\globalController;
 
 
 //forms 
-Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
+// Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
 
 //login
@@ -35,6 +36,7 @@ Route::get('/view_posts', [globalController::class, 'load_viewPosts'])->name("vi
 Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
 Route::post('/login', [globalController::class, 'login'])->name("login");
 Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
+Route::resource('/posts', PostController::class);
 
 
 //user
