@@ -14,6 +14,13 @@ class userController extends Controller
     }
 
 
+    public function logout()
+    {
+        session()->forget('user');
+        return view('home');
+    }
+
+
     public function load_userDashboard(Request $req)
     {
         $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->get();
