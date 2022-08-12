@@ -20,7 +20,7 @@
 </head>
 <body >
     <div class="property-form-block">
-        <h5>Privacy Statement for Lost-And-Found</h5>
+        <h5 >Privacy Statement for Lost-And-Found</h5>
         <h5>Effective [August 12, 2022]</h5>
         <h5>IN GENERAL</h5>
         <p>Lost-And-Found. has created this privacy statement in order to demonstrate our firm commitment
