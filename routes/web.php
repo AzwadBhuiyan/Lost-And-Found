@@ -29,6 +29,7 @@ Route::get('/login', [globalController::class, 'load_login']);
 
 //global
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
+Route::get('/home', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/search_results', [globalController::class, 'load_searchResults'])->name("searchResults");
 Route::get('/view_posts', [globalController::class, 'load_viewPosts'])->name("viewPosts");
 Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
