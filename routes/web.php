@@ -54,12 +54,16 @@ Route::get('/login', [globalController::class, 'load_login']);
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/search_results', [globalController::class, 'load_searchResults'])->name("searchResults");
 Route::get('/view_posts', [globalController::class, 'load_viewPosts'])->name("viewPosts");
+Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
+Route::post('/login', [globalController::class, 'login'])->name("login");
 Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
 
 
 //user
 Route::get('/create_post', [userController::class, 'load_createPost'])->name("createPost_UI");
 Route::get('/user_dashboard', [userController::class, 'load_userDashboard'])->name("user_Dashboard");
+Route::get('/logout', [userController::class, 'logout'])->name("logout");
+Route::post('/create_post', [userController::class, 'create_post'])->name("create_post");
 
 //admin
 Route::get('/admin_dashboard', [adminController::class, 'load_adminDashboard'])->name("admin_Dashboard");
@@ -70,3 +74,7 @@ Route::get('/contact', [globalController::class, 'load_contactUs'])->name("conta
 Route::get('/privacy-policy', [globalController::class, 'load_privacyPolicy'])->name("privacyPolicy");
 Route::get('/contact', [globalController::class, 'load_contactUs'])->name("contactUs");
 Route::get('/toc', [globalController::class, 'load_toc'])->name("toc");
+
+
+
+Route::get('/test', [globalController::class, 'test']);
