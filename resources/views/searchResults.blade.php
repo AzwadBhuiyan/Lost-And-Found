@@ -58,7 +58,7 @@
 
 
                 <div class="navleft">
-                    <p>Regular Post</p>
+                    <p>Search Results</p>
                 </div>
 
 
