@@ -5,11 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bootstrap demo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
 <body>
+@include('navBar.nav', ['data' => 'home'])
   <!-- Modal -->
   <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -31,7 +31,7 @@
 
   <div class="container">
     <main>
-
+      
       <div class="row g-3 my-4">
         <div class="col-md-6 col-lg-6">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -42,42 +42,28 @@
               <div>
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                   <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                      class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                      aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                      aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                      aria-label="Slide 4"></button>
-
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    
                   </div>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="https://source.unsplash.com/610x400/?nature,tech" alt="Image Front 1"
-                        class="d-block w-100">
+                      <img src="https://source.unsplash.com/610x400/?nature,tech" alt="Image Front 1" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                      <img src="https://source.unsplash.com/610x400/?nature,tech" alt="Image Front 2"
-                        class="d-block w-100">
+                      <img src="https://source.unsplash.com/610x400/?nature,tech" alt="Image Front 2" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                      <img src="https://source.unsplash.com/610x400/?nature,tech" alt="Image Back 3"
-                        class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="https://source.unsplash.com/610x400/?nature,tech" alt="Image Back 4"
-                        class="d-block w-100">
+                      <img src="https://source.unsplash.com/610x400/?nature,tech" alt="Image Back 3" class="d-block w-100">
                     </div>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
@@ -85,7 +71,17 @@
                 <!-- <img src="https://source.unsplash.com/610x400/?nature,tech" alt=""> -->
               </div>
             </li>
-
+            
+              <div class="upload__box">
+                <div class="upload__btn-box">
+                  <label class="upload__btn">
+                    <p>Upload images</p>
+                    <input type="file" multiple="" data-max_length="20" class="upload__inputfile">
+                  </label>
+                </div>
+                <div class="upload__img-wrap"></div>
+              </div>
+            
           </ul>
 
         </div>
@@ -108,8 +104,8 @@
                   <option>Electronics</option>
                   <option>Pet & Animals</option>
                   <option>Documents</option>
-                  
-                  
+
+
                 </select>
                 <div class="invalid-feedback">
                   Invalid feedback
@@ -123,7 +119,7 @@
                   <option>Dhaka</option>
                   <option>Chittagong</option>
                   <option>Khulna</option>
-                  
+
                 </select>
                 <div class="invalid-feedback">
                   Invalid feedback
@@ -131,12 +127,13 @@
               </div>
 
               <div class="col-12">
-                <div class="form-group"> <!-- Date input -->
+                <div class="form-group">
+                  <!-- Date input -->
                   <label class="control-label" for="date">Date Lost/Found</label>
-                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
                 </div>
               </div>
-              
+
 
               <div class="col-12">
                 <label for="location" class="form-label">Location:</label>
@@ -147,8 +144,7 @@
               </div>
               <div class="col-12 form-floating">
                 <label for="firstName" class="form-label">Discription:</label>
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                  style="height: 100px"></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
 
 
               </div>
@@ -182,13 +178,9 @@
       </div>
     </main>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-    crossorigin="anonymous"></script>
+  @extends('footer.footer')
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
   !-- jQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
@@ -196,12 +188,10 @@
   <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
 
   <!-- Bootstrap Date-Picker Plugin -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       var date_input = $('input[name="date"]'); //our date input has the name "date"
       var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
       var options = {
