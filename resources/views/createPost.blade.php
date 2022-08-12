@@ -9,7 +9,7 @@
 </head>
 
 <body>
-@include('navBar.nav', ['data' => 'home'])
+@include('navBar.nav', ['data' => 'create_post'])
   <!-- Modal -->
   <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -38,7 +38,7 @@
             <span class="text-muted">Item:</span>
           </h4>
           <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                   <div class="carousel-indicators">
@@ -68,10 +68,19 @@
                   <span class="visually-hidden">Next</span>
                 </button>
 
-                <!-- <img src="https://source.unsplash.com/610x400/?nature,tech" alt=""> -->
-              </div>
-            </li>
-            
+                <!- <img src="https://source.unsplash.com/610x400/?nature,tech" alt=""> -->
+              <!-- </div> -->
+            <!-- </li> -->
+        public function uploadFile(Request $req)
+         {
+        $front_img_name = "1" . "_1" .  ".jpg";
+        $back_img_name = "1" . "_2" .  ".jpg";
+        $extra_img_name = "1" . "_3" .  ".jpg";
+
+        $req->image->move(public_path('images'), $front_img_name . ".jpg");
+        $req->image->move(public_path('images'), $back_img_name . ".jpg");
+        $req->image->move(public_path('images'), $back_img_name . ".jpg");
+           }
               <div class="upload__box">
                 <div class="upload__btn-box">
                   <label class="upload__btn">
@@ -85,9 +94,12 @@
           </ul>
 
         </div>
+
         <div class="col-md-6 col-lg-6 order-md-last">
           <h4 class="mb-3">Item Details:</h4>
-          <form class="needs-validation" novalidate="">
+
+          <form action="{{ route('create_post') }}" class="needs-validation" method="POST">
+                        @csrf
             <div class="row g-3">
               <div class="col-12">
                 <label for="itemName" class="form-label">Item Name:</label>
@@ -130,27 +142,27 @@
                 <div class="form-group">
                   <!-- Date input -->
                   <label class="control-label" for="date">Date Lost/Found</label>
-                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
+                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
                 </div>
               </div>
 
 
               <div class="col-12">
                 <label for="location" class="form-label">Location:</label>
-                <input type="text" class="form-control" id="location" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="location" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Invalid-feedback
                 </div>
               </div>
               <div class="col-12 form-floating">
                 <label for="firstName" class="form-label">Discription:</label>
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
 
 
               </div>
               <div class="col-12">
                 <label for="PhoneNumber" class="form-label">Phone Number:</label>
-                <input type="text" class="form-control" id="PhoneNumber" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="PhoneNumber" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Invalid-feedback
                 </div>
@@ -163,12 +175,19 @@
               <hr class="my-4">
 
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="same-address">
+                <input name="show_email" type="checkbox" class="form-check-input" id="same-address" >
                 <label class="form-check-label" for="same-address">Show your email</label>
               </div>
 
+              <div class="form-check">
+                <input name="urgent" type="checkbox" class="form-check-input" id="urgent" >
+                <label class="form-check-label" for="urgent">Make Urgent</label>
+              </div>
+
+
+
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#submitModal">
+              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#submitModal">
                 Create/Save Post
               </button>
 
@@ -181,7 +200,7 @@
   @extends('footer.footer')
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-  !-- jQuery -->
+  <!-- jQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
   <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
