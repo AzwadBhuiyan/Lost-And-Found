@@ -11,7 +11,7 @@
 <body>
 @include('navBar.nav', ['data' => 'create_post'])
   <!-- Modal -->
-  <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+  {{-- <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   <div class="container">
     <main>
@@ -71,7 +71,7 @@
                 <!- <img src="https://source.unsplash.com/610x400/?nature,tech" alt=""> -->
               <!-- </div> -->
             <!-- </li> -->
-        public function uploadFile(Request $req)
+        {{-- public function uploadFile(Request $req)
          {
         $front_img_name = "1" . "_1" .  ".jpg";
         $back_img_name = "1" . "_2" .  ".jpg";
@@ -80,7 +80,7 @@
         $req->image->move(public_path('images'), $front_img_name . ".jpg");
         $req->image->move(public_path('images'), $back_img_name . ".jpg");
         $req->image->move(public_path('images'), $back_img_name . ".jpg");
-           }
+           } --}}
               <div class="upload__box">
                 <div class="upload__btn-box">
                   <label class="upload__btn">
@@ -98,27 +98,26 @@
         <div class="col-md-6 col-lg-6 order-md-last">
           <h4 class="mb-3">Item Details:</h4>
 
-          <form action="{{ route('create_post') }}" class="needs-validation" method="POST">
+          <form action="/posts" class="needs-validation" method="POST">
                         @csrf
             <div class="row g-3">
               <div class="col-12">
                 <label for="itemName" class="form-label">Item Name:</label>
-                <input type="text" class="form-control" id="ItemName" placeholder="" value="" required="">
+                <input type="text" class="form-control" name="title" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                   Invalid-feedback
                 </div>
               </div>
 
               <div class="col-12">
-                <label for="state" class="form-label">Catagory</label>
-                <select class="form-select" id="state" required="">
+                <label for="state" class="form-label">Category</label>
+                <select name='category' class="form-select" id="state" required="">
                   <option value="">-Select-</option>
                   <option>Electronics</option>
                   <option>Pet & Animals</option>
                   <option>Documents</option>
-
-
                 </select>
+                {{-- <input name="category"> --}}
                 <div class="invalid-feedback">
                   Invalid feedback
                 </div>
@@ -126,7 +125,7 @@
 
               <div class="col-12">
                 <label for="state" class="form-label">Division</label>
-                <select class="form-select" id="state" required="">
+                <select name="location" class="form-select" id="state" required="">
                   <option value="">-Select-</option>
                   <option>Dhaka</option>
                   <option>Chittagong</option>
@@ -142,7 +141,7 @@
                 <div class="form-group">
                   <!-- Date input -->
                   <label class="control-label" for="date">Date Lost/Found</label>
-                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
+                  <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text" required/>
                 </div>
               </div>
 
@@ -154,15 +153,26 @@
                   Invalid-feedback
                 </div>
               </div>
+
               <div class="col-12 form-floating">
-                <label for="firstName" class="form-label">Discription:</label>
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
-
-
+                {{-- <input type="submit"/> --}}
+                <div class="p-1">
+                    <h8>Description:</h8>
+                </div>
+                <input type="text" name="description" class="form-control" id="description" placeholder="Write description here" value="" required>
               </div>
+
               <div class="col-12">
                 <label for="PhoneNumber" class="form-label">Phone Number:</label>
-                <input type="text" class="form-control" id="PhoneNumber" placeholder="" value="" required>
+                <input type="text" name="phone" class="form-control" id="PhoneNumber" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Invalid-feedback
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="Email" class="form-label">Email: </label>
+                <input type="email" name="email" class="form-control" id="Email" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Invalid-feedback
                 </div>
@@ -175,8 +185,8 @@
               <hr class="my-4">
 
               <div class="form-check">
-                <input name="show_email" type="checkbox" class="form-check-input" id="same-address" >
-                <label class="form-check-label" for="same-address">Show your email</label>
+                <input name="show_email" type="checkbox" class="form-check-input" id="showMail" >
+                <label class="form-check-label" for="showMail">Show your email</label>
               </div>
 
               <div class="form-check">
@@ -214,7 +224,7 @@
       var date_input = $('input[name="date"]'); //our date input has the name "date"
       var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
       var options = {
-        format: 'mm/dd/yyyy',
+        format: 'dd/mm/yyyy',
         container: container,
         todayHighlight: true,
         autoclose: true,
@@ -222,6 +232,14 @@
       date_input.datepicker(options);
     })
   </script>
+
+  <script>
+    document.getElementById("urgent").checked = true;
+  </script>
+  <script>
+    document.getElementById("showMail").checked = true;
+  </script>
+  
 
 </body>
 

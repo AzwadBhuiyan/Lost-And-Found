@@ -30,33 +30,34 @@ class userController extends Controller
         return view('userDashboard', $sendData);
     }
 
-    public function create_post(Request $req)
-    {
-        $show_email = false;
-        $urgent = false;
+    // public function create_post(Request $req)
+    // {
+    //     $show_email = false;
+    //     $urgent = false;
 
-        if($req->show_email === 'on'){
-            $show_email = true;
-        }
+    //     if($req->show_email === 'on'){
+    //         $show_email = true;
+    //     }
 
-        // if($req->urgent === 'on'){
-        //     $urgent = true;
-        // }
-        DB::table('posts')->insert([
-            'title' => $req->name,
-            'date' => Carbon::now(),
-            'urgent' => false,
-            'reported' => false,
-            'description' => $req->description,
-            'location' => $req->division,
-            'category' => $req->category,
-            'status' => 'active',
-            'phone' => $req->phone_number,
-            'email' => session('email'),
-            'show_email' => $show_email,
-        ]);
-        // dd($req);
+    //     // if($req->urgent === 'on'){
+    //     //     $urgent = true;
+    //     // }
+    //     DB::table('posts')->insert([
+    //         'title' => $req->name,
+    //         'date' => Carbon::now(),
+    //         'urgent' => false,
+    //         'reported' => false,
+    //         'description' => $req->description,
+    //         'location' => $req->division,
+    //         'category' => $req->category,
+    //         'status' => 'active',
+    //         'phone' => $req->phone_number,
+    //         'email' => session('email'),
+    //         'show_email' => $show_email,
+    //     ]);
+    //     // dd($req);
 
-        return redirect()->route('user_Dashboard');
-    }
+    //     return redirect()->route('user_Dashboard');
+
+    // }
 }
