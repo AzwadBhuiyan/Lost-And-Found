@@ -15,16 +15,11 @@ class PostController extends Controller
     public function index()
     {
         //
-        // $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->get();
 
-        // $list = array();
-
-        // $user_result = DB::table('posts')->where('email',  session('email'))->get();
-
-        $posts = Post::where('status', '!=', 'archived')->where('urgent', false)->get();
-
+        // $posts = Post::where('status', '!=', 'archived')->where('urgent', false)->get();
+        $posts = Post::where('status', '!=', 'archived')->get();
         $sendData['leftResults'] = $posts;
-        return view('userDashboard', $sendData);
+        return view('posts.index', $sendData);
     }
 
     /**
@@ -35,6 +30,7 @@ class PostController extends Controller
     public function create()
     {
         //
+        return view('posts.create');
     }
 
     /**
@@ -46,6 +42,22 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        $post = new Post;
+        $post = Post::create([
+            'title' => $request->input('title'),
+            'date' => $request->input('date'),
+            'urgent' => $request->boolean('urgent'),
+            'reported' => false,
+            'description' => $request->input('description'),
+            'location' => $request->input('location'),
+            'category' => $request->input('category'),
+            'status' => 'active',
+            'phone' => $request->input('phone'),
+            'email' => $request->input('email'),
+            'show_email' => $request->boolean('show_email'),
+        ]);
+
+        return redirect('/posts');
     }
 
     /**

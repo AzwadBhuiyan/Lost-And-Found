@@ -39,10 +39,10 @@ class globalController extends Controller
     }
 
 
-    public function load_viewPosts()
-    {
-        return view('viewPosts');
-    }
+    // public function load_viewPosts()
+    // {
+    //     return view('viewPosts');
+    // }
 
     //footer pages
     public function load_aboutUs()
@@ -122,8 +122,4 @@ class globalController extends Controller
         $sendData['rightResults'] = $result;
         return view('searchResults', $sendData);
     }
-
-
-
-
 }
