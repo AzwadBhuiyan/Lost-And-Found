@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Aug 15, 2022 at 12:57 AM
+-- Generation Time: Aug 15, 2022 at 01:06 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -130,8 +130,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `phone`) VALUES
-(1, 'Azwad Bhuiyan', 'azwad_bhuiyan@lostandfound.com', '$2y$10$5kWI6.BHPPS2I9RVRz.YW.WSD5CnO73rWP7nGKdRZNpNGd8rCZA3G', '01710000000'),
-(2, 'Tanim Alam', 'tanim_alam@lostandfound.com', '$2y$10$GsNTzZmbBHieMphaRXEpg.ZXSuwND0hDGq/Q61euee6sUJ9NmZn8W', '01800000000');
+(1, 'Azwad Bhuiyan', 'azwad@abc.com', '$2y$10$5kWI6.BHPPS2I9RVRz.YW.WSD5CnO73rWP7nGKdRZNpNGd8rCZA3G', '01710000000'),
+(2, 'Farhan noor dehan', 'farhan@abc.com', '$2y$10$GsNTzZmbBHieMphaRXEpg.ZXSuwND0hDGq/Q61euee6sUJ9NmZn8W', '01800000000');
 
 --
 -- Indexes for dumped tables
@@ -195,7 +195,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user`
