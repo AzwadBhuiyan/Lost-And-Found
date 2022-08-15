@@ -29,7 +29,7 @@
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user_dashboard">Dashboard</a>
+                    <a class="nav-link" href="/posts">Posts</a>
                 </li>
             {{-- @elseif($data == 'urgent')
                 <li class="nav-item">
@@ -49,7 +49,7 @@
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="{{ $style }}" href="/user_dashboard">Dashboard</a>
+                    <a class="nav-link" style="{{ $style }}" href="/postsDashboard</a>
                 </li>
                 &nbsp;&nbsp;
                 <li class="nav-item">
@@ -63,7 +63,7 @@
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user_dashboard">Dashboard</a>
+                    <a class="nav-link" href="/posts">Posts</a>
                 </li>
             @else
                 <li class="nav-item">
@@ -73,7 +73,7 @@
                     <a class="nav-link" href="#">Urgent</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/user_dashboard">Dashboard</a>
+                    <a class="nav-link" href="/posts">Posts</a>
                 </li>
             @endif
 
