@@ -36,7 +36,7 @@ Route::get('/search_results', [globalController::class, 'load_searchResults'])->
 Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
 Route::post('/login', [globalController::class, 'login'])->name("login");
 Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
-
+Route::post('/insert_load_contactUs', [globalController::class, 'insert_load_contactUs'])->name("insert_load_contactUs");
 
 //Post Models
 Route::resource('/posts', PostController::class);
@@ -55,7 +55,6 @@ Route::get('/admin_dashboard', [adminController::class, 'load_adminDashboard'])-
 Route::get('/about', [globalController::class, 'load_aboutUs'])->name("load_aboutUs");
 Route::get('/contact', [globalController::class, 'load_contactUs'])->name("contactUs");
 Route::get('/privacy-policy', [globalController::class, 'load_privacyPolicy'])->name("privacyPolicy");
-Route::get('/contact', [globalController::class, 'load_contactUs'])->name("contactUs");
 Route::get('/toc', [globalController::class, 'load_toc'])->name("toc");
 
 
