@@ -26,6 +26,9 @@
                     <a class="nav-link" style="{{ $style }}" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link"  href="/user_dashboard">User Dashboard</a>
+                </li>
+                <li class="nav-item">
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
                 </li>
                 <li class="nav-item">
