@@ -5,7 +5,6 @@ use App\Http\Controllers\formController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\globalController;
-use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +20,7 @@ use App\Http\Controllers\PostController;
 
 
 //forms 
-// Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
+Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
 
 //login
@@ -36,10 +35,13 @@ Route::get('/search_results', [globalController::class, 'load_searchResults'])->
 Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
 Route::post('/login', [globalController::class, 'login'])->name("login");
 Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
+<<<<<<< HEAD
 
 
 //Post Models
 Route::resource('/posts', PostController::class);
+=======
+>>>>>>> parent of 19c07cd (Post model and controller created. Changed userDashboard to posts view)
 
 
 //user
