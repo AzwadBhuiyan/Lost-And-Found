@@ -21,12 +21,9 @@
         </ul>
 
         <div class="d-flex navbar-nav">
-            @if ($data == 'home')
+            @if ($data == 'home' && session()->has('user'))
                 <li class="nav-item">
-                    <a class="nav-link" style="{{ $style }}" href="/home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"  href="/user_dashboard">User Dashboard</a>
+                    <a class="nav-link" style="{{ $style }}" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
@@ -44,9 +41,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Dashboard</a>
                 </li> --}}
-            @elseif($data == 'dashboard')
+            @elseif($data == 'dashboard' && session()->has('user'))
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
@@ -60,7 +57,7 @@
                 </li>
             @elseif($data == 'create_post')
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
@@ -68,16 +65,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/user_dashboard">Dashboard</a>
                 </li>
-            @else
+            @elseif($data == 'search_results')
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="#">Urgent</a>
-                </li> --}}
+                <li class="nav-item">
+                    {{-- <a class="nav-link" href="#">Urgent</a> --}}
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user_dashboard">Dashboard</a>
                 </li>
+            {{-- @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user_dashboard">Dashboard</a>
+                </li> --}}
             @endif
 
 
