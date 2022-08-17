@@ -23,7 +23,7 @@
     @include('navBar.nav', ['data' => 'home'])
 
     <div class="container">
-        <h1 class="text-center my-5 display-5">Find Your Lost Item</h1>
+        <h1 class="text-center my-5 display-5">Find Your Lost Items</h1>
         <form action="{{ route('search') }}" class="" method="POST">
             @csrf
             <div class="d-flex justify-content-around row-1">
