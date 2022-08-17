@@ -35,13 +35,10 @@ Route::get('/search_results', [globalController::class, 'load_searchResults'])->
 Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
 Route::post('/login', [globalController::class, 'login'])->name("login");
 Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
-<<<<<<< HEAD
 
 
 //Post Models
 Route::resource('/posts', PostController::class);
-=======
->>>>>>> parent of 19c07cd (Post model and controller created. Changed userDashboard to posts view)
 
 
 //user
