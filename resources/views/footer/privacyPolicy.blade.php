@@ -19,6 +19,7 @@
     
 </head>
 <body >
+  @include('navBar.nav', ['data' => ''])
     <div class="property-form-block">
         <h5 >Privacy Statement for Lost-And-Found</h5>
         <h5>Effective [August 12, 2022]</h5>

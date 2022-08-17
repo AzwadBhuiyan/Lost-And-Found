@@ -21,7 +21,7 @@
 
 
     <body>
-
+    @include('navBar.nav', ['data' => ''])
           <div class="container1">
             <form id="form">
               <h3>Contact Us</h3>

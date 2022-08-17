@@ -23,6 +23,7 @@
             
 </head>
 <body>
+@include('navBar.nav', ['data' => ''])
   <section class="banner-weber">
     <div class="banner">
       <div class="container">
