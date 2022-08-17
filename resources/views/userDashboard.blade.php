@@ -52,7 +52,6 @@
                       @foreach ($leftResults as $item)
 
                       
-
                       <div class="card text-white bg-light mb-3 m-4  cardDiv " >
                        
                         <div class="row g-0">
@@ -102,6 +101,7 @@
                         
                       </div>
                       
+                     
 
 
 
