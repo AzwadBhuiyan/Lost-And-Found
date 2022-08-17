@@ -19,8 +19,9 @@
     
 </head>
 <body >
+  @include('navBar.nav', ['data' => ''])
     <div class="property-form-block">
-        <h5 >Privacy Statement for Lost-And-Found</h5>
+        <h2>Privacy Statement for Lost-And-Found</h2><br>
         <h5>Effective [August 12, 2022]</h5>
         <h5>IN GENERAL</h5>
         <p>Lost-And-Found. has created this privacy statement in order to demonstrate our firm commitment
@@ -78,22 +79,23 @@
         <a href="mailto:lostandfound984@gmail.com">lostandfound984@gmail.com</a></p>
         </div>
 
-        <footer class="bg-dark footer ">
-              
-              <div class="container-fluid text-center text-white">
-                  <p>Copyright&#9400;
-                      <script>
-                          document.write(new Date().getFullYear())
-                      </script> | Lost & Found | All Rights Reserved
-                  </p>
-                  <div class="footer-links d-flex justify-content-around container mt-5">
-                      <a href="">About Us</a>
-                      <a href="">Terms & Conditions</a>
-                      <a href="">Privacy Policy</a>
-                      <a href="">Contact Us</a>
-                  </div>
-              </div>
-          </footer>
+   <!--  <footer class="bg-dark footer mt-lg-5">
+        <hr>
+        <div class="container-fluid text-center text-white">
+            <p>Copyright&#9400;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> | Lost & Found | All Rights Reserved
+            </p>
+            <div class="footer-links d-flex justify-content-around container mt-5">
+                <a href="">About Us</a>
+                <a href="">Terms & Conditions</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Contact Us</a>
+            </div>
+        </div>
+  </footer> -->
+  @extends('footer.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
