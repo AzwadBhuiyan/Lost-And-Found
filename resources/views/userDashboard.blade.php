@@ -18,7 +18,7 @@
 
 <body>
   
-  @include('navBar.nav', ['data' => ''])
+  @include('navBar.nav', ['data' => 'dashboard'])
  
     <section class="section1">
 
@@ -52,7 +52,6 @@
                       @foreach ($leftResults as $item)
 
                       
-
                       <div class="card text-white bg-light mb-3 m-4  cardDiv " >
                        
                         <div class="row g-0">
@@ -82,8 +81,9 @@
                                 <!-- -->
                                <div class="container ">
                                 <div class="btn-group d-flex justify-content-start" role="group" aria-label="Basic example">
-                                  
-                                   <button  type="button" class="main-btn"><a href="{{ route('user.found', $item->id) }}" >Found</a></button>
+                                  <button type="button" class="main-btn">Found</button>
+
+                                   {{-- <button  type="button" class="main-btn"><a href="{{ route('user.found', $item->id) }}" >Found</a></button> --}}
                                     <button type="button" class="main-btn">Edit</button>
                                     <button type="button" class="main-btn2">Delete</button>
                                   </div>
@@ -101,6 +101,7 @@
                         
                       </div>
                       
+                     
 
 
 
