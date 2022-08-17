@@ -23,30 +23,17 @@ class userController extends Controller
 
     public function load_userDashboard(Request $req)
     {
-       // $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->get();
+        $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->get();
         
-      //  $list = array();
+        $list = array();
 
-        $user_result = DB::table('posts')->where('email',  session('email'))->where('status', '!=', 'archived')->get();
+        $user_result = DB::table('posts')->where('email',  session('email'))->get();
 
         $sendData['leftResults'] = $user_result;
 
         return view('userDashboard', $sendData);
 
     }
-
-
-    public function found(Request $request){
-        $id=$request->id;
-        DB::table('posts')
-        ->where('id', $id)
-        ->update([
-            'status'     => "archived"
-        ]);
-        return $this->load_userDashboard($request);
-
-    }
-
     public function create_function(Request $req){
         //if email true 
         $show_email= false;
