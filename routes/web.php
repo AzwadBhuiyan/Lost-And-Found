@@ -5,7 +5,6 @@ use App\Http\Controllers\formController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\globalController;
-use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +20,7 @@ use App\Http\Controllers\PostController;
 
 
 //forms 
-// Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
+Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
 
 //login
@@ -36,15 +35,18 @@ Route::get('/search_results', [globalController::class, 'load_searchResults'])->
 Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
 Route::post('/login', [globalController::class, 'login'])->name("login");
 Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
+
 Route::post('/insert_load_contactUs', [globalController::class, 'insert_load_contactUs'])->name("insert_load_contactUs");
+
 
 //Post Models
 Route::resource('/posts', PostController::class);
 
 
+
 //user
 Route::get('/create_post', [userController::class, 'load_createPost'])->name("createPost_UI");
-// Route::get('/user_dashboard', [userController::class, 'load_userDashboard'])->name("user_Dashboard");
+Route::get('/user_dashboard', [userController::class, 'load_userDashboard'])->name("user_Dashboard");
 Route::get('/logout', [userController::class, 'logout'])->name("logout");
 // Route::post('/create_post', [userController::class, 'create_post'])->name("create_post");
 

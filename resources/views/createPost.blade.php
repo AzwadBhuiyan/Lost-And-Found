@@ -108,7 +108,7 @@
         <div class="col-md-6 col-lg-6 order-md-last">
           <h4 class="mb-3">Item Details:</h4>
 
-          <form action="/posts" class="needs-validation" method="POST">
+          <form action="{{ route('create_post') }}" class="needs-validation" method="POST">
                         @csrf
             <div class="row g-3">
               <div class="col-12">
@@ -136,7 +136,7 @@
 
               <div class="col-12">
                 <label for="state" class="form-label">Division</label>
-                <select name="location" class="form-select" id="state" required="">
+                <select class="form-select" id="state" required="">
                   <option value="">-Select-</option>
                   <option>Dhaka</option>
                   <option>Chittagong</option>
@@ -152,7 +152,7 @@
                 <div class="form-group">
                   <!-- Date input -->
                   <label class="control-label" for="date">Date Lost/Found</label>
-                  <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text" required/>
+                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
                 </div>
               </div>
 
@@ -164,26 +164,15 @@
                   Invalid-feedback
                 </div>
               </div>
-
               <div class="col-12 form-floating">
-                {{-- <input type="submit"/> --}}
-                <div class="p-1">
-                    <h8>Description:</h8>
-                </div>
-                <input type="text" name="description" class="form-control" id="description" placeholder="Write description here" value="" required>
-              </div>
+                <label for="firstName" class="form-label">Discription:</label>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
 
+
+              </div>
               <div class="col-12">
                 <label for="PhoneNumber" class="form-label">Phone Number:</label>
-                <input type="text" name="phone" class="form-control" id="PhoneNumber" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Invalid-feedback
-                </div>
-              </div>
-
-              <div class="col-12">
-                <label for="Email" class="form-label">Email: </label>
-                <input type="email" name="email" class="form-control" id="Email" placeholder="" value="" required>
+                <input type="text" class="form-control" id="PhoneNumber" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Invalid-feedback
                 </div>
@@ -196,8 +185,8 @@
               <hr class="my-4">
 
               <div class="form-check">
-                <input name="show_email" type="checkbox" class="form-check-input" id="showMail" >
-                <label class="form-check-label" for="showMail">Show your email</label>
+                <input name="show_email" type="checkbox" class="form-check-input" id="same-address" >
+                <label class="form-check-label" for="same-address">Show your email</label>
               </div>
 
               <div class="form-check">

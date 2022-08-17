@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Aug 15, 2022 at 01:06 AM
+-- Generation Time: Aug 12, 2022 at 04:46 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -105,11 +105,11 @@ INSERT INTO `posts` (`id`, `title`, `date`, `urgent`, `reported`, `description`,
 (4, 'IUB admission form', '2022-06-28', 0, 0, 'admission form of IUB with student name Yeard', 'Dhaka', 'Documents', 'active', '', '', 0),
 (5, 'Black kitten', '2021-09-29', 0, 0, 'Black kitten lost in block D Bashundhara R/A. Color Black, Age 2-3months. Eye color green', 'Khulna', 'Pet and Animals', 'active', '', '', 0),
 (6, 'iphone 11 pro max', '2022-04-28', 0, 1, 'Green iphone 11 pro max imei: 121232677', 'Dhaka', 'Electronics', 'active', '', '', 0),
-(7, 'leather bag', '2021-12-25', 0, 1, 'Office leather bag lost in airport', 'Chittagong', 'Documents', 'active', '01855599911', 'azwad@abc.com', 0),
+(7, 'leather bag', '2021-12-25', 0, 1, 'Office leather bag lost in gulistan', 'Chittagong', 'Documents', 'active', '01855599911', 'azwad@abc.com', 0),
 (8, 'iphone 12 pro max', '2021-09-16', 1, 0, 'White iphone 12 pro max lost in kagoji bari lane with rainbow wallpaper', 'Khulna', 'Electronics', 'active', '01300000147', 'azwad@abc.com', 0),
 (9, 'birth certificate', '2022-07-05', 1, 0, 'Birth certificate lost in khilgaon road 2. Name: Umme Hani', 'Chittagong', 'Documents', 'archived', '', '', 0),
 (10, 'voter id card', '2021-09-10', 1, 0, 'Voter ID card lost in sonadanga. Name: Farhan, Blood group A+', 'Khulna', 'Documents', 'active', '', '', 0),
-(11, 'Samsung S20 FE', '2022-08-12', 1, 0, 'This phone was lost in new market. ', 'Dhaka', 'Electronics', 'active', '01825856542', 'azwad_bhuiyan@lostandfound.com', 0);
+(11, 'Samsung S20', '2022-08-12', 1, 0, 'This phone was lost in new market. ', 'Dhaka', 'Electronics', 'active', '01825856542', 'azwad_bhuiyan@lostandfound.com', 0);
 
 -- --------------------------------------------------------
 
@@ -121,17 +121,16 @@ CREATE TABLE `user` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `password`, `phone`) VALUES
-(1, 'Azwad Bhuiyan', 'azwad@abc.com', '$2y$10$5kWI6.BHPPS2I9RVRz.YW.WSD5CnO73rWP7nGKdRZNpNGd8rCZA3G', '01710000000'),
-(2, 'Farhan noor dehan', 'farhan@abc.com', '$2y$10$GsNTzZmbBHieMphaRXEpg.ZXSuwND0hDGq/Q61euee6sUJ9NmZn8W', '01800000000');
+INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
+(1, 'Abdul Azwad Bhuiyan', 'azwad@abc.com', '123'),
+(2, 'Umme Hani', 'ummehani@abc.com', '121');
 
 --
 -- Indexes for dumped tables
@@ -195,7 +194,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`

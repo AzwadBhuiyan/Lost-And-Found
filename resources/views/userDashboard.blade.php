@@ -51,13 +51,17 @@
                       <!-- // -->  
                       @foreach ($leftResults as $item)
 
+                      
+
                       <div class="card text-white bg-light mb-3 m-4  cardDiv " >
+                       
                         <div class="row g-0">
                           <div class="col-md-4">
                             <img src="./images/{{$item->id}}_1.jpg" class="img-fluid rounded-start limg"  alt="...">
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
+                              
 
                               <div class="row">
                                 <div class="col-7 col-sm-4">
@@ -85,13 +89,18 @@
                                   </div>
                                 </div>
                               <!-- -->
+
+
+                               
                             </div>
 
 
 
                           </div>
                         </div>
+                        
                       </div>
+                      
 
 
 

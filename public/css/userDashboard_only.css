@@ -161,6 +161,7 @@ body{
     
 }
 
+
 .cardDiv2{
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
@@ -339,6 +340,22 @@ p{
     border-color:#3366ff;
     
   }
+  
+
+  .left_section .card:hover{
+    
+    border-color:#0518e7;
+    transition: 0.3s;
+    border-width: 3px;
+    
+    
+  }
+  .cardDiv:hover{
+   
+    box-shadow: 0 4px 8px 0 rgba(218, 6, 233, 0.2), 0 6px 20px 0 rgba(235, 7, 170, 0.19);
+    
+    
+}
 
 
 
