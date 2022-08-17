@@ -25,7 +25,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-sm-12">
 				<div class="property-form-block">
-                    <h5 > Terms & Conditions for Lost-And-Found</h5>
+                    <h2 style="text-align:center" > Terms & Conditions</h2><br>
                         <h5>User Agreement for Lost-And-Found</h5>
                         <p>You must read, agree with and accept all of the terms and conditions contained in this User Agreement.</p><br>
 
