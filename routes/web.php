@@ -44,6 +44,7 @@ Route::resource('/posts', PostController::class);
 //user
 Route::get('/create_post', [userController::class, 'load_createPost'])->name("createPost_UI");
 Route::get('/user_dashboard', [userController::class, 'load_userDashboard'])->name("user_Dashboard");
+Route::get('user/{id}', [userController::class, 'found'])->name('user.found');
 Route::get('/logout', [userController::class, 'logout'])->name("logout");
 // Route::post('/create_post', [userController::class, 'create_post'])->name("create_post");
 
