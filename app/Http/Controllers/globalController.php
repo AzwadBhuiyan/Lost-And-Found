@@ -39,10 +39,10 @@ class globalController extends Controller
     }
 
 
-    // public function load_viewPosts()
-    // {
-    //     return view('viewPosts');
-    // }
+    public function load_viewPosts()
+    {
+        return view('viewPosts');
+    }
 
     //footer pages
     public function load_aboutUs()
@@ -125,20 +125,5 @@ class globalController extends Controller
 
 
 
-    public function insert_load_contactUs(Request $req)
-    {
-        DB::table('message')->insert([
-            'email' => $req->email,
-            'message' => $req->message,
-        ]);
-        
-        $insert = DB::table('message')->where('message',  $req->message)->get()->first();
-        if($insert){
-            return redirect()->route('homePage');
-        }
-        else{
-            echo '404 server error';
-            die;
-        }
-    }
+
 }
