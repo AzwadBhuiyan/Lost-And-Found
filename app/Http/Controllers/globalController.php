@@ -14,6 +14,25 @@ class globalController extends Controller
     {
         return view('login');
     }
+    public function login(Request $req)
+    {
+        $user = DB::table('user')->where('email', $req->email)->get()->first();
+
+        // $matched_password = Hash::check($req->password, $user->password);
+        if ($user) {
+            session(['user' => $user->name]);
+            session(['email' => $user->email]);
+            return redirect()->route('homePage');
+        }
+        return redirect()->back()->with('error');
+        // dd($matched_password);
+    }
+
+
+
+
+
+
     public function load_homePage()
     {
         return view('home');
@@ -49,15 +68,7 @@ class globalController extends Controller
 
 
 
-
-    // public function load_homePage()
-    // {
-    //     $counter['counter'] = DB::table('posts')->where('status', 'Active')->count();
-    //     return view('home', $counter);
-    // }
-
-
-    //search
+    //home page search engine
     public function load_searchResults(Request $req)
     {
         $result = DB::table('posts')->where('category', $req->category)
@@ -73,6 +84,8 @@ class globalController extends Controller
             $count = 0;
             foreach ($title as $value2) {
                 foreach ($search_text as $value3) {
+                    $value2 = strtolower($value2);
+                    $value3 = strtolower($value3);
                     if ($value2 === $value3) {
                         $count++;
                     }
@@ -88,6 +101,9 @@ class globalController extends Controller
             $count = 0;
             foreach ($title as $value2) {
                 foreach ($search_text as $value3) {
+                    $value2 = strtolower($value2);
+                    $value3 = strtolower($value3);
+
                     if ($value2 === $value3) {
                         $count++;
                     }

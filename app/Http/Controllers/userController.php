@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -14,28 +14,63 @@ class userController extends Controller
     }
 
 
+    public function logout()
+    {
+        session()->forget('user');
+        return view('home');
+    }
+
+
     public function load_userDashboard(Request $req)
     {
-//......................................
-        $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->get();
-        // dd($result2);
-        // $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->take(3)->get();
-       
-        $list = array();
-       
-       
+       // $result2 = $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', false)->get();
+        
+      //  $list = array();
 
-       
-        // right search results;
-        $result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', true)->get();
-        //$result = DB::table('posts')->where('status', '!=', 'archived')->where('urgent', true)->take(3)->get();
+        $user_result = DB::table('posts')->where('email',  session('email'))->where('status', '!=', 'archived')->get();
 
-        // dd($result['rightResults']);
-        $sendData['leftResults'] = $result2;
-        $sendData['rightResults'] = $result;   
+        $sendData['leftResults'] = $user_result;
 
-        return view('userDashboard',$sendData);
+        return view('userDashboard', $sendData);
+
     }
-//....................................................
+
+
+    public function found(Request $request){
+        $id=$request->id;
+        DB::table('posts')
+        ->where('id', $id)
+        ->update([
+            'status'     => "archived"
+        ]);
+        return $this->load_userDashboard($request);
+
+    }
+
+    public function create_post(Request $req){
+        //if email true 
+        $show_email= false;
+
+        if($req->show_email==='on'){
+            $show_email=true;
+        }
+        //adding into table posts from form.
+        DB::table('posts')->insert([
+            'title' => $req->name,
+            'date' => Carbon::now(),
+            'urgent' => false,
+            'reported' => false,
+            'description' => $req->description,
+            'location' => $req->division,
+            'category' => $req->category,
+            'status' => 'active',
+            'phone' => $req->phone_number,
+            'email' => session('email'),
+            'show_email' => $show_email,
+        ]);
+//    return redirect()->route('user_dashboard');
+
+
+    }
 
 }

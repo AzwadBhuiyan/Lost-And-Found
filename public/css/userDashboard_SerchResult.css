@@ -340,6 +340,50 @@ p{
     border-color:#3366ff;
     
   }
+  .left-image {
+    object-fit: cover;
+    width: 230px;
+    height: 230px !important;
+}
+
+
+.right-image {
+    object-fit: cover;
+    width: 350px;
+    height: 350px !important;
+    align-self: center;
+    object-fit: scale-down;
+}
+
+.left_section .card:hover{
+    
+    border-color:#0518e7;
+    transition: 0.3s;
+    border-width: 3px;
+    
+    
+  }
+  .cardDiv:hover{
+   
+    box-shadow: 0 4px 8px 0 rgba(218, 6, 233, 0.2), 0 6px 20px 0 rgba(235, 7, 170, 0.19);
+    
+    
+}
+
+.right_section .card:hover{
+    
+    border-color:#d40606;
+    transition: 0.3s;
+    border-width: 3px;
+    
+    
+  }
+  .cardDiv2:hover{
+   
+    box-shadow: 0 4px 8px 0 rgba(167, 5, 178, 0.2), 0 6px 20px 0 rgba(172, 5, 214, 0.19);
+    
+    
+}
 
 
 

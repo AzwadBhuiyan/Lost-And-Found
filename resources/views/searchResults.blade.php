@@ -19,7 +19,7 @@
 
 
 </head>
-<style>
+<!--<style>
   .left-image {
       object-fit: cover;
       width: 230px;
@@ -34,7 +34,7 @@
       align-self: center;
       object-fit: scale-down;
   }
-</style>
+</style> -->
 <body>
 
 
@@ -58,7 +58,7 @@
 
 
                 <div class="navleft">
-                    <p>Regular Post</p>
+                    <p>Search Results</p>
                 </div>
 
 

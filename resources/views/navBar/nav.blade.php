@@ -23,7 +23,10 @@
         <div class="d-flex navbar-nav">
             @if ($data == 'home')
                 <li class="nav-item">
-                    <a class="nav-link" style="{{ $style }}" href="#">Home</a>
+                    <a class="nav-link" style="{{ $style }}" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  href="/user_dashboard">User Dashboard</a>
                 </li>
                 <li class="nav-item">
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
@@ -31,19 +34,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/user_dashboard">Dashboard</a>
                 </li>
-            @elseif($data == 'urgent')
+            {{-- @elseif($data == 'urgent')
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-link" style="{{ $style }}" href="#">Urgent</a> --}}
+                    <a class="nav-link" style="{{ $style }}" href="#">Urgent</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Dashboard</a>
-                </li>
+                </li> --}}
             @elseif($data == 'dashboard')
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
                     {{-- <a class="nav-link" href="#">Urgent</a> --}}
@@ -51,9 +54,23 @@
                 <li class="nav-item">
                     <a class="nav-link" style="{{ $style }}" href="/user_dashboard">Dashboard</a>
                 </li>
+                &nbsp;&nbsp;
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="{{route('createPost_UI')}}">Create Post</a>
+                </li>
+            @elseif($data == 'create_post')
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    {{-- <a class="nav-link" href="#">Urgent</a> --}}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user_dashboard">Dashboard</a>
+                </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/home">Home</a>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="#">Urgent</a>
@@ -63,12 +80,31 @@
                 </li>
             @endif
 
-            &nbsp;
-            &nbsp;&nbsp;
-            &nbsp;
-            {{-- <a href="{{ route('loadLogin') }}" class="btn btn-primary">Log In</a> --}}
-            &nbsp;
-            &nbsp;
+
+            @if (session()->has('user'))
+                &nbsp;&nbsp;
+                &nbsp;&nbsp;
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="color: #dfdfdf">
+                        {{ session('user') }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/logout">Log Out</a>
+                    </div>
+                    &nbsp;&nbsp;
+                </div>
+                &nbsp;&nbsp;
+                &nbsp;
+            @else
+                &nbsp;
+                &nbsp;&nbsp;
+                &nbsp;
+                <a href="{{ route('loadLogin') }}" class="btn btn-primary">Log In</a>
+                &nbsp;
+                &nbsp;
+            @endif
+
         </div>
     </div>
 </nav>
