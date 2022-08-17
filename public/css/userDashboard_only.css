@@ -356,6 +356,15 @@ p{
     
     
 }
+a:link {
+    
+   
+    color: var(--bg-dark-blue);
+    
+    text-decoration-color: #030c21;
+    
+    text-decoration: none;
+  }
 
 
 
