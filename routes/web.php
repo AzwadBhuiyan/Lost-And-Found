@@ -29,23 +29,23 @@ Route::get('/login', [globalController::class, 'load_login']);
 
 //global
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
-Route::get('/home', [globalController::class, 'load_homePage'])->name("homePage");
+// Route::get('/home', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/search_results', [globalController::class, 'load_searchResults'])->name("searchResults");
-// Route::get('/view_posts', [globalController::class, 'load_viewPosts'])->name("viewPosts");
+Route::get('/view_posts/{id}', [globalController::class, 'load_viewPosts'])->name("viewPosts");
+Route::get('/report_a_post/{id}', [globalController::class, 'report_a_post'])->name("viewPosts");
 Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
 Route::post('/login', [globalController::class, 'login'])->name("login");
+Route::get('/register', [globalController::class, 'load_register'])->name("loadregister");
+Route::post('/register', [globalController::class, 'register'])->name("register");
 Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
-
-
-//Post Models
-Route::resource('/posts', PostController::class);
+Route::post('/insert_load_contactUs', [globalController::class, 'insert_load_contactUs'])->name("insert_load_contactUs");
 
 
 //user
 Route::get('/create_post', [userController::class, 'load_createPost'])->name("createPost_UI");
 Route::get('/user_dashboard', [userController::class, 'load_userDashboard'])->name("user_Dashboard");
 Route::get('/logout', [userController::class, 'logout'])->name("logout");
-// Route::post('/create_post', [userController::class, 'create_post'])->name("create_post");
+Route::post('/create_post', [userController::class, 'create_post'])->name("create_post");
 
 //admin
 Route::get('/admin_dashboard', [adminController::class, 'load_adminDashboard'])->name("admin_Dashboard");
