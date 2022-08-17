@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -47,7 +47,7 @@ class userController extends Controller
 
     }
 
-    public function create_function(Request $req){
+    public function create_post(Request $req){
         //if email true 
         $show_email= false;
 
@@ -68,7 +68,7 @@ class userController extends Controller
             'email' => session('email'),
             'show_email' => $show_email,
         ]);
-    return redirect()->route('user_dashboard');
+//    return redirect()->route('user_dashboard');
 
 
     }
