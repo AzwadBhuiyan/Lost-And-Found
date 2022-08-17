@@ -66,22 +66,23 @@
             });
             </script> 
 
-          <footer class="bg-dark footer ">
-              
-              <div class="container-fluid text-center text-white">
-                  <p>Copyright&#9400;
-                      <script>
-                          document.write(new Date().getFullYear())
-                      </script> | Lost & Found | All Rights Reserved
-                  </p>
-                  <div class="footer-links d-flex justify-content-around container mt-5">
-                      <a href="">About Us</a>
-                      <a href="">Terms & Conditions</a>
-                      <a href="">Privacy Policy</a>
-                      <a href="">Contact Us</a>
-                  </div>
-              </div>
-          </footer>
+  <!--  <footer class="bg-dark footer mt-lg-5">
+    <hr>
+    <div class="container-fluid text-center text-white">
+        <p>Copyright&#9400;
+            <script>
+                document.write(new Date().getFullYear())
+            </script> | Lost & Found | All Rights Reserved
+        </p>
+        <div class="footer-links d-flex justify-content-around container mt-5">
+            <a href="">About Us</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">Privacy Policy</a>
+            <a href="">Contact Us</a>
+        </div>
+    </div>
+  </footer> -->
+  @extends('footer.footer')
 
             
 

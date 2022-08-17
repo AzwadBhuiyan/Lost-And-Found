@@ -164,7 +164,7 @@
 	       });
 	</script>
 
-  <footer class="bg-dark footer mt-lg-5">
+ <!--  <footer class="bg-dark footer mt-lg-5">
     <hr>
     <div class="container-fluid text-center text-white">
         <p>Copyright&#9400;
@@ -179,7 +179,8 @@
             <a href="">Contact Us</a>
         </div>
     </div>
-  </footer>
+  </footer> -->
+  @extends('footer.footer')
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
