@@ -51,6 +51,7 @@
                       <!-- // -->  
                       @foreach ($leftResults as $item)
 
+                      <a href="/view_posts/{{ $item->id }}" >
                       
                       <div class="card text-white bg-light mb-3 m-4  cardDiv " >
                        
@@ -93,16 +94,13 @@
 
                                
                             </div>
-
-
-
                           </div>
-                        </div>
-                        
+                        </div>                        
                       </div>
                       
-                     
 
+                     
+                      </a>
 
 
 

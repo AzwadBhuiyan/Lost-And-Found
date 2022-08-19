@@ -81,6 +81,9 @@
 
 
                     @foreach ($leftResults as $item)
+
+                     <a href="/view_posts/{{ $item->id }}" >
+
                         <div class="card text-white bg-light mb-3 m-4 cardDiv  "
                             style="max-width: 100%; margin: 12px;  ">
                             <div class="row g-0">
@@ -102,13 +105,14 @@
                                         </div>
                                         <p class="card-text   lh-sm  text-wrap"> {{$item->description}}</p>
 
-
-
-
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                     </a>
+
+
                         @endforeach
 
 
@@ -151,6 +155,9 @@
 
 
                     @foreach ($rightResults as $item)
+
+                    <a href="/view_posts/{{ $item->id }}" >
+
                     <div class="card text-white bg-light m-3 cardDiv2  p-3 " style="width: 90%; margin: 15px; ">
                         <img src="./images/{{$item->id}}_1.jpg"
                             class="card-img-top right-image border " alt="...">
@@ -172,6 +179,10 @@
 
                         </div>
                     </div>
+
+
+                    </a>
+
                     @endforeach
 
 
