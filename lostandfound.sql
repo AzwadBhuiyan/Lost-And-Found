@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Aug 12, 2022 at 04:46 PM
+-- Generation Time: Aug 20, 2022 at 11:41 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -32,6 +32,14 @@ CREATE TABLE `message` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `email`, `message`) VALUES
+(1, 'farhan@mail.com', 'Hello, I want to make an urgent post. How can I do it?'),
+(2, 'mursalin@abc.com', 'I just wanted to thank you for making our life easier. This website is great');
 
 -- --------------------------------------------------------
 
@@ -88,7 +96,7 @@ CREATE TABLE `posts` (
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `location` set('Dhaka','Chittagong','Khulna') COLLATE utf8mb4_unicode_ci NOT NULL,
   `category` set('Electronics','Documents','Pet and Animals') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` set('archived','active') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` set('archived','active','found') COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `show_email` tinyint(1) NOT NULL
@@ -99,17 +107,17 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `date`, `urgent`, `reported`, `description`, `location`, `category`, `status`, `phone`, `email`, `show_email`) VALUES
-(1, 'iphone 8', '2021-11-12', 0, 0, 'Old iphone 8 white color with broken display', 'Khulna', 'Electronics', 'active', '01732165498', 'azwad@abc.com', 1),
-(2, 'iphone 8', '2022-07-11', 0, 0, 'iphone 8 pink color lost in bashundhara R/A road 2', 'Dhaka', 'Electronics', 'active', '', '', 0),
+(1, 'iphone 8', '2022-08-09', 0, 0, 'this iPhone was lost at bashundhara R/a', 'Dhaka', 'Electronics', 'active', '01938599887', 'azwad@abc.com', 1),
+(2, 'iphone 8', '2022-07-11', 0, 0, 'iphone 8 pink color lost in bashundhara R/A road 2', 'Dhaka', 'Electronics', 'found', '', '', 0),
 (3, 'IUB id card', '2021-12-09', 0, 0, 'id card lost in IUB. Name: \r\n Abdul Azwad Bhuiyan. Department CSC. Blood group: B+', 'Dhaka', 'Documents', 'active', '', '', 0),
-(4, 'IUB admission form', '2022-06-28', 0, 0, 'admission form of IUB with student name Yeard', 'Dhaka', 'Documents', 'active', '', '', 0),
+(4, 'IUB admission form', '2022-06-28', 0, 0, 'admission form of IUB with student name Yeard', 'Dhaka', 'Documents', 'found', '', '', 0),
 (5, 'Black kitten', '2021-09-29', 0, 0, 'Black kitten lost in block D Bashundhara R/A. Color Black, Age 2-3months. Eye color green', 'Khulna', 'Pet and Animals', 'active', '', '', 0),
 (6, 'iphone 11 pro max', '2022-04-28', 0, 1, 'Green iphone 11 pro max imei: 121232677', 'Dhaka', 'Electronics', 'active', '', '', 0),
-(7, 'leather bag', '2021-12-25', 0, 1, 'Office leather bag lost in gulistan', 'Chittagong', 'Documents', 'active', '01855599911', 'azwad@abc.com', 0),
-(8, 'iphone 12 pro max', '2021-09-16', 1, 0, 'White iphone 12 pro max lost in kagoji bari lane with rainbow wallpaper', 'Khulna', 'Electronics', 'active', '01300000147', 'azwad@abc.com', 0),
-(9, 'birth certificate', '2022-07-05', 1, 0, 'Birth certificate lost in khilgaon road 2. Name: Umme Hani', 'Chittagong', 'Documents', 'archived', '', '', 0),
+(7, 'leather bags', '2021-12-25', 0, 0, 'dasdasdasdas', 'Chittagong', 'Documents', 'found', '01855599911', 'azwad@abc.com', 1),
+(8, 'iphone 12 pro max', '2021-09-16', 1, 1, 'sdasdas', 'Dhaka', 'Electronics', 'found', '01300000147', 'azwad@abc.com', 0),
+(9, 'birth certificate', '2022-07-05', 1, 0, 'Birth certificate lost in khilgaon road 2. Name: Umme Hani', 'Chittagong', 'Documents', 'found', '', '', 0),
 (10, 'voter id card', '2021-09-10', 1, 0, 'Voter ID card lost in sonadanga. Name: Farhan, Blood group A+', 'Khulna', 'Documents', 'active', '', '', 0),
-(11, 'Samsung S20', '2022-08-12', 1, 0, 'This phone was lost in new market. ', 'Dhaka', 'Electronics', 'active', '01825856542', 'azwad_bhuiyan@lostandfound.com', 0);
+(11, 'Samsung S20 FE', '2022-08-12', 1, 0, 'This phone was lost in new market. ', 'Dhaka', 'Electronics', 'active', '01825856542', 'azwad_bhuiyan@lostandfound.com', 0);
 
 -- --------------------------------------------------------
 
@@ -121,16 +129,19 @@ CREATE TABLE `user` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Abdul Azwad Bhuiyan', 'azwad@abc.com', '123'),
-(2, 'Umme Hani', 'ummehani@abc.com', '121');
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `phone`) VALUES
+(1, 'Azwad Bhuiyan', 'azwad@abc.com', '$2y$10$5kWI6.BHPPS2I9RVRz.YW.WSD5CnO73rWP7nGKdRZNpNGd8rCZA3G', '01710000000'),
+(2, 'Farhan noor dehan', 'farhan@abc.com', '$2y$10$GsNTzZmbBHieMphaRXEpg.ZXSuwND0hDGq/Q61euee6sUJ9NmZn8W', '01800000000'),
+(3, 'azwad', 'azwad230@gmail.com', '$2y$10$Hmdwf0RvGGjplQQn42xJS.JiwR21Kcj0I/yKrp/ly48hLzThp0n0i', '01938599887'),
+(4, 'Umme Hani', 'ummehani@abc.com', '$2y$10$rf85EUMQ/XrQ0eZQRoe1XuAJDQGMM1SYJy7P5sqp6IxUW/3rZe54.', '01900000000');
 
 --
 -- Indexes for dumped tables
@@ -176,7 +187,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -194,13 +205,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
