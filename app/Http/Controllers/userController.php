@@ -97,6 +97,27 @@ class userController extends Controller
 
 
 
+    public function found($id)
+    {
+        DB::table('posts')->where('id',  $id)->update(['status' => 'found']);
+
+        return redirect()->back();
+    }
+
+
+    public function delete($id)
+    {
+        DB::table('posts')->where('id',  $id)->delete();
+
+        return redirect()->back();
+    }
+
+
+
+
+
+
+
     public function editPost(Request $req)
     { 
         $post = DB::table('posts')->where('id',  $req->id)->where('email', session('email'))->get()->first();
