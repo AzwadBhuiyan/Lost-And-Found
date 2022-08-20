@@ -46,6 +46,10 @@ Route::get('/create_post', [userController::class, 'load_createPost'])->name("cr
 Route::get('/user_dashboard', [userController::class, 'load_userDashboard'])->name("user_Dashboard");
 Route::get('/logout', [userController::class, 'logout'])->name("logout");
 Route::post('/create_post', [userController::class, 'create_post'])->name("create_post");
+Route::get('/found/{id}', [userController::class, 'found'])->name("found");
+Route::get('/edit/{id}', [userController::class, 'edit'])->name("edit");
+Route::get('/delete/{id}', [userController::class, 'delete'])->name("delete");
+Route::post('/edit_post', [userController::class, 'editPost'])->name("edit_post");
 
 //admin
 Route::get('/admin_dashboard', [adminController::class, 'load_adminDashboard'])->name("admin_Dashboard");

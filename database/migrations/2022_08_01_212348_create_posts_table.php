@@ -20,10 +20,9 @@ return new class extends Migration
             $table->boolean('urgent');
             $table->boolean('reported');
             $table->string('description');
-            // $table->string('image_path');
             $table->set('location', ['Dhaka', 'Chittagong', 'Khulna']);
             $table->set('category', ['Electronics', 'Documents', 'Pet and Animals']);
-            $table->set('status', ['archived', 'active']);
+            $table->set('status', ['archived', 'active', 'found']);
         });
     }
 
