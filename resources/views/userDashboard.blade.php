@@ -1,6 +1,6 @@
   <!--<h1>User Dashboard</h1> -->
 
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
 <!--Boostrap 5 CDN linl --> <!-- CSS only -->
