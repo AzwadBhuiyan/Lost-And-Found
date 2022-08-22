@@ -12,6 +12,16 @@ class adminController extends Controller
     {
         $results = DB::table('posts')->where('status', '!=', 'archived')->get();
         $data['results'] = $results;
-        return view('adminDashboard', $data);
+        return view('adminDashboard.posts', $data);
+    }
+
+    public function archive_post(Request $req)
+    {
+        DB::table('posts')->where('id', $req->id)
+            ->update([
+                'status' => 'archived',
+            ]);
+
+        return redirect()->route('admin_Dashboard');
     }
 }

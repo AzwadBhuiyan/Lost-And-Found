@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Admin Dashboard</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -55,71 +55,74 @@
                             </div>
                         </div>
                         
-                        <div class="card mb-4">
+
+                        
+
+                        <div class="card">
                             <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Reported posts
+                              Posts
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Title</th>
-                                            <th>Date</th>
-                                            <th>Urgent</th>
-                                            <th>Reported</th>
-                                            <th>Description</th>
-                                            <th>Location</th>
-                                            <th>Category</th>
-                                            <th>Status</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Title</th>
-                                            <th>Date</th>
-                                            <th>Urgent</th>
-                                            <th>Reported</th>
-                                            <th>Description</th>
-                                            <th>Location</th>
-                                            <th>Category</th>
-                                            <th>Status</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        @foreach ($results as $item)
-                                        <tr>
-                                            <td>{{$item->id}}</td>
-                                            <td>{{$item->title}}</td>
-                                            <td>{{$item->date}}</td>
-                                            <td>{{$item->urgent}}</td>
-                                            <td>{{$item->reported}}</td>
-                                            <td>{{$item->description}}</td>
-                                            <td>{{$item->location}}</td>
-                                            <td>{{$item->category}}</td>
-                                            <td>{{$item->status}}</td>
-                                            <td>{{$item->phone}}</td>
-                                            <td>{{$item->email}}</td>
-                                        </tr>
-                                    </tbody>
-                                    @endforeach
-                                </table>
+                              <h5 class="card-title">All posts</h5>
+                              <table class="table table-striped table-light table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>Date</th>
+                                        <th>Urgent</th>
+                                        <th>Reported</th>
+                                        <th>Description</th>
+                                        <th>Location</th>
+                                        <th>Category</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    @foreach ($results as $item)
+                                    <tr>
+                                        <td>{{$item->id}}</td>
+                                        <td>{{$item->title}}</td>
+                                        <td>{{$item->date}}</td>
+                                        <td>{{$item->urgent}}</td>
+                                        <td>{{$item->reported}}</td>
+                                        <td>{{$item->description}}</td>
+                                        <td>{{$item->location}}</td>
+                                        <td>{{$item->category}}</td>
+                                        <td>{{$item->phone}}</td>
+                                        <td>{{$item->email}}</td>
+                                        <td> <a href="{{ url('view_posts/'.$item->id) }}"><button type="button" class="btn btn-info">Details</button></a></td>
+                                        <td><button type="button" class="btn btn-warning">Archive</button></td>
+                                        <td> <a href="{{ url('delete/'.$item->id) }}"><button type="button" class="btn btn-danger">Delete</button></a> </td>
+
+                                    </tr>
+                                </tbody>
+                                @endforeach
+                            </table>
+                            
                             </div>
-                        </div>
+                          </div>
+
+                        
                     </div>
                 </main>
                 
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        {{-- <script src="js/scripts.js"></script> --}}
+        <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+        {{-- <script>
+            $(document).ready(function () {
+                $('#myTable').DataTable();
+            });
+        </script> --}}
     </body>
 </html>
