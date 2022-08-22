@@ -138,14 +138,5 @@ class userController extends Controller
 
 
 
-    public function uploadFile(Request $req)
-    {
-        $front_img_name = "1" . "_1" .  ".jpg";
-        $back_img_name = "1" . "_2" .  ".jpg";
-        $extra_img_name = "1" . "_3" .  ".jpg";
 
-        $req->image->move(public_path('images'), $front_img_name . ".jpg");
-        $req->image->move(public_path('images'), $back_img_name . ".jpg");
-        $req->image->move(public_path('images'), $back_img_name . ".jpg");
-    }
 }

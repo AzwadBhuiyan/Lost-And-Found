@@ -33,11 +33,38 @@
                     </h4>
                     <ul class="list-group mb-3">
                         <li class="list-group-item d-flex justify-content-between lh-sm">
-                            {{-- IMAGE Upload part --}}
-
+                            <div>
+                                <label for="file">Choose file to upload(Max size 2MB)</label> <br>
+                                <input type="file" id="file" name="img1">
+                                <input type="file" id="file" name="img2">
+                                <input type="file" id="file" name="img3">
+                              </div>
                         </li>
 
                     </ul>
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../images/{{ $post->id }}_1.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/{{ $post->id }}_2.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/{{ $post->id }}_3.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
 
                 </div>
                 <div class="col-md-6 col-lg-6 order-md-last">
