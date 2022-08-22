@@ -41,8 +41,7 @@ class globalController extends Controller
             session(['user' => $req->name]);
             session(['email' => $req->email]);
             return redirect()->route('homePage');
-        }
-        else{
+        } else {
             echo "404 server error";
             die;
         }
@@ -68,10 +67,9 @@ class globalController extends Controller
 
     public function load_homePage()
     {
-        $foundPost['foundPost']=(int)DB::table('posts')->where('status', 'found')->count();
+        $foundPost['foundPost'] = (int)DB::table('posts')->where('status', 'found')->count();
 
-        return view('home', $foundPost) ;
-    
+        return view('home', $foundPost);
     }
 
 
@@ -108,12 +106,11 @@ class globalController extends Controller
             'email' => $req->email,
             'message' => $req->message,
         ]);
-        
+
         $insert = DB::table('message')->where('message',  $req->message)->get()->first();
-        if($insert){
+        if ($insert) {
             return redirect()->route('homePage');
-        }
-        else{
+        } else {
             echo '404 server error';
             die;
         }
@@ -127,6 +124,11 @@ class globalController extends Controller
     public function load_toc()
     {
         return view('footer.toc');
+    }
+
+    public function unauthorized()
+    {
+        return view('unauthorized');
     }
 
 
@@ -194,6 +196,4 @@ class globalController extends Controller
         $sendData['rightResults'] = $result;
         return view('searchResults', $sendData);
     }
-
-    
 }

@@ -64,3 +64,4 @@ Route::get('/toc', [globalController::class, 'load_toc'])->name("toc");
 
 
 Route::get('/test', [globalController::class, 'test']);
+Route::get('/unauthorized', [globalController::class, 'unauthorized'])->name('unauthorized');

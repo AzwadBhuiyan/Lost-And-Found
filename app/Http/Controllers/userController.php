@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Carbon\Carbon;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -34,9 +36,8 @@ class userController extends Controller
         $sendData['leftResults'] = $user_result;
 
         return view('userDashboard', $sendData);
-
     }
-    
+
     // public function found(Request $request){
     //     $id=$request->id;
     //     DB::table('posts')
@@ -47,21 +48,21 @@ class userController extends Controller
     //     return $this->load_userDashboard($request);
 
     // }
- 
- 
+
+
     public function create_post(Request $req)
-    { 
+    {
         $show_email = false;
         $urgent = false;
 
-        if($req->show_email === 'on'){
+        if ($req->show_email === 'on') {
             $show_email = true;
         }
 
         // if($req->urgent === 'on'){
         //     $urgent = true;
         // }
-        $postId=DB::table('posts')->insertGetId([
+        $postId = DB::table('posts')->insertGetId([
             'title' => $req->name,
             'date' => Carbon::now(),
             'urgent' => false,
@@ -74,8 +75,8 @@ class userController extends Controller
             'email' => session('email'),
             'show_email' => $show_email,
         ]);
-       
-       
+
+
         $front_img_name = strval($postId) . "_1" .  ".jpg";
         $back_img_name = strval($postId) . "_2" .  ".jpg";
         $extra_img_name = strval($postId) . "_3" .  ".jpg";
@@ -84,7 +85,6 @@ class userController extends Controller
         $req->img2->move(public_path('images'), $back_img_name);
         $req->img3->move(public_path('images'), $extra_img_name);
         return redirect()->route('user_Dashboard');
-
     }
 
     public function edit($id)
@@ -119,7 +119,7 @@ class userController extends Controller
 
 
     public function editPost(Request $req)
-    { 
+    {
         $post = DB::table('posts')->where('id',  $req->id)->where('email', session('email'))->get()->first();
         DB::table('posts')->where('id', $req->id)
             ->update([
@@ -134,7 +134,6 @@ class userController extends Controller
 
         $data['leftResults'] = DB::table('posts')->where('email',  session('email'))->get();
         return redirect()->route('user_Dashboard');
-
     }
 
 
@@ -149,6 +148,4 @@ class userController extends Controller
         $req->image->move(public_path('images'), $back_img_name . ".jpg");
         $req->image->move(public_path('images'), $back_img_name . ".jpg");
     }
-
-
 }
