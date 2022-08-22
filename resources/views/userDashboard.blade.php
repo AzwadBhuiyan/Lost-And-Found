@@ -51,6 +51,7 @@
                       <!-- // -->  
                       @foreach ($leftResults as $item)
 
+                      <a href="/view_posts/{{ $item->id }}" >
                       
                       <div class="card text-white bg-light mb-3 m-4  cardDiv " >
                        
@@ -81,11 +82,10 @@
                                 <!-- -->
                                <div class="container ">
                                 <div class="btn-group d-flex justify-content-start" role="group" aria-label="Basic example">
-                                  <button type="button" class="main-btn">Found</button>
+                                  <a class="main-btn" href="/found/{{$item->id}}">Found</a>
+                                  <a class="main-btn2" href="/delete/{{$item->id}}">delete</a>
+                                  <a class=" main-btn2" href="/edit/{{$item->id}}">Edit</a>
 
-                                   {{-- <button  type="button" class="main-btn"><a href="{{ route('user.found', $item->id) }}" >Found</a></button> --}}
-                                    <button type="button" class="main-btn">Edit</button>
-                                    <button type="button" class="main-btn2">Delete</button>
                                   </div>
                                 </div>
                               <!-- -->
@@ -93,16 +93,13 @@
 
                                
                             </div>
-
-
-
                           </div>
-                        </div>
-                        
+                        </div>                        
                       </div>
                       
-                     
 
+                     
+                      </a>
 
 
 

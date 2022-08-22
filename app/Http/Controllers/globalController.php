@@ -68,7 +68,10 @@ class globalController extends Controller
 
     public function load_homePage()
     {
-        return view('home');
+        $foundPost['foundPost']=(int)DB::table('posts')->where('status', 'found')->count();
+
+        return view('home', $foundPost) ;
+    
     }
 
 
@@ -191,4 +194,6 @@ class globalController extends Controller
         $sendData['rightResults'] = $result;
         return view('searchResults', $sendData);
     }
+
+    
 }
