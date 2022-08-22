@@ -196,4 +196,16 @@ class globalController extends Controller
         $sendData['rightResults'] = $result;
         return view('searchResults', $sendData);
     }
+
+
+    public function createContactUs(Request $req)
+    {
+        DB::table('message')->insert([
+            'email' => $req->email,
+            'message' => $req->message,
+        ]);
+
+        $foundPost['foundPost'] = (int) DB::table('posts')->where('status', 'found')->count();
+        return view('home', $foundPost);
+    }
 }

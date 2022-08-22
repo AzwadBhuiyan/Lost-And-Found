@@ -23,8 +23,6 @@ use App\Http\Controllers\globalController;
 Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
 
-//login
-Route::get('/login', [globalController::class, 'load_login']);
 
 
 //global
@@ -33,12 +31,12 @@ Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/search_results', [globalController::class, 'load_searchResults'])->name("searchResults");
 Route::get('/view_posts/{id}', [globalController::class, 'load_viewPosts'])->name("viewPosts");
 Route::get('/report_a_post/{id}', [globalController::class, 'report_a_post'])->name("viewPosts");
-Route::get('/login', [globalController::class, 'load_login'])->name("loadLogin");
+Route::get('/login', [globalController::class, 'load_login'])->middleware('loginAuth')->name("loadLogin");
 Route::post('/login', [globalController::class, 'login'])->name("login");
 Route::get('/register', [globalController::class, 'load_register'])->name("loadregister");
 Route::post('/register', [globalController::class, 'register'])->name("register");
 Route::post('/search', [globalController::class, 'load_searchResults'])->name("search");
-Route::post('/insert_load_contactUs', [globalController::class, 'insert_load_contactUs'])->name("insert_load_contactUs");
+Route::post('/createContactUs', [globalController::class, 'createContactUs'])->name("createContactUs");
 
 
 //user
@@ -58,7 +56,6 @@ Route::get('/admin_dashboard', [adminController::class, 'load_adminDashboard'])-
 Route::get('/about', [globalController::class, 'load_aboutUs'])->name("load_aboutUs");
 Route::get('/contact', [globalController::class, 'load_contactUs'])->name("contactUs");
 Route::get('/privacy-policy', [globalController::class, 'load_privacyPolicy'])->name("privacyPolicy");
-Route::get('/contact', [globalController::class, 'load_contactUs'])->name("contactUs");
 Route::get('/toc', [globalController::class, 'load_toc'])->name("toc");
 
 

@@ -31,18 +31,7 @@
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Lost Item:</span>
                     </h4>
-                    <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <label for="file">Choose file to upload(Max size 2MB)</label> <br>
-                                <input type="file" id="file" name="img1">
-                                <input type="file" id="file" name="img2">
-                                <input type="file" id="file" name="img3">
-                              </div>
-                        </li>
-
-                    </ul>
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleControls" class="carousel slide w-75" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="../images/{{ $post->id }}_1.jpg" class="d-block w-100">
@@ -56,12 +45,12 @@
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                             data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                             data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
@@ -69,8 +58,27 @@
                 </div>
                 <div class="col-md-6 col-lg-6 order-md-last">
                     <h4 class="mb-3">Item Details:</h4>
-                    <form action="{{ route('edit_post') }}" class="needs-validation" method="POST">
+                    <form action="{{ route('edit_post') }}" class="needs-validation" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item lh-sm">
+                                <label>Choose file to upload(Max size 2MB)</label>
+                                <br>
+                                <br>
+                                <div>
+                                    <label for="file1">Front Image</label>
+                                    <input type="file" id="file1" name="img1" placeholder="asd">
+                                </div>
+                                <div><label for="file2">Back Image</label>
+                                    <input type="file" id="file2" name="img2">
+                                </div>
+                                <div><label for="file3">Extra Image</label>
+                                    <input type="file" id="file3" name="img3">
+                                </div>
+                            </li>
+
+                        </ul>
                         <div class="row g-3">
                             <div class="col-12">
                                 <label for="itemName" class="form-label">Item Name:</label>
@@ -82,7 +90,7 @@
                             </div>
 
                             <input type="hidden" value="{{ $post->id }}" name="id">
-                            
+
                             <div class="col-12">
                                 <label for="state" class="form-label">Catagory</label>
                                 <select name="category" class="form-select" id="state" required="">
@@ -100,7 +108,7 @@
 
                             <div class="col-12">
 
-                            
+
                                 <label for="state" class="form-label">Division</label>
                                 <select name="division" class="form-select" id="state" required="">
                                     <option selected value="{{ $post->location }}">{{ $post->location }}</option>
@@ -120,7 +128,8 @@
                                     <!-- Date input -->
                                     <label class="control-label" for="date">Date Lost/Found</label>
                                     <input name="date" class="form-control" id="date" name="date"
-                                        value="{{ $post->date }}" placeholder="MM/DD/YYY" type="text" required />
+                                        value="{{ $post->date }}" placeholder="MM/DD/YYY" type="text"
+                                        required />
                                 </div>
                             </div>
 
@@ -147,12 +156,11 @@
                             <hr class="my-4">
 
                             <div class="form-check">
-                                <input name="show_email" type="checkbox"
-                                    class="form-check-input" id="same-address">
+                                <input name="show_email" type="checkbox" class="form-check-input" id="same-address">
                                 <label class="form-check-label" for="same-address">Show your email</label>
                             </div>
 
-                        
+
 
                             {{-- <div class="form-check">
                                 <input name="urgent" type="checkbox" class="form-check-input" id="urgent">
@@ -180,9 +188,10 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.
 
-        Azwad, [17.08.22 00:34]
-        2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-        crossorigin="anonymous"></script>
+                Azwad, [17.08.22 00:34]
+                2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+    </script>
     {{-- !-- jQuery --> --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 

@@ -23,11 +23,10 @@
     <body>
     @include('navBar.nav', ['data' => ''])
           <div class="container1">
-            <form id="form">
+            <form action="{{ route('createContactUs') }}" id="form" method="POST">              
+              @csrf
               <h3>Contact Us</h3>
-              <input type="text" name="name" id="name" placeholder="Your Name" required>
               <input type="text" name="email" id="email"  placeholder="Your Email" required>
-              <input type="text" name="phone" id="phone" placeholder="Your Phone no." required>
               <textarea input type="text" name="message" id="message" rows="4" placeholder="Your Name" required></textarea>
               <input type="submit" id="button" value="Send Email" >
             </form>
@@ -37,14 +36,9 @@
 
           <!--Webside email: lostandfound984@gmail.com   password:lost1and2found3 -->
 
-          <script type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        
 
-          <script type="text/javascript">
-          emailjs.init('i6_zk-Jc2ba664hFg')
-          </script>
-
-          <script>const btn = document.getElementById('button');
+          {{-- <script>const btn = document.getElementById('button');
 
             document.getElementById('form')
             .addEventListener('submit', function(event) {
@@ -64,7 +58,7 @@
                   alert(JSON.stringify(err));
                 });
             });
-            </script> 
+            </script>  --}}
 
   <!--  <footer class="bg-dark footer mt-lg-5">
     <hr>

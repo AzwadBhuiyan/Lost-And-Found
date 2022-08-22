@@ -16,8 +16,8 @@ class logInAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        if(session()->has('user')){
-            return redirect()->route('home');
+        if(session()->has('email')){
+            return redirect()->route('homePage');
         }
         return $next($request);
     }
