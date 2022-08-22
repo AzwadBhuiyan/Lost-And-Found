@@ -25,6 +25,7 @@
     <section>
         <div class="col-sm-12 text-center mb-5">
             <h1>{{ $post->title }}</h1>
+            <h1>{{ $post->title }}</h1>
         </div>
     </section>
 

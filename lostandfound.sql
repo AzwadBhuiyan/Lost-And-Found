@@ -2,7 +2,7 @@
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
+-- Host: localhost:8812
 -- Generation Time: Aug 12, 2022 at 04:46 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
@@ -32,6 +32,14 @@ CREATE TABLE `message` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `email`, `message`) VALUES
+(1, 'farhan@mail.com', 'Hello, I want to make an urgent post. How can I do it?'),
+(2, 'mursalin@abc.com', 'I just wanted to thank you for making our life easier. This website is great');
 
 -- --------------------------------------------------------
 
@@ -121,16 +129,19 @@ CREATE TABLE `user` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Abdul Azwad Bhuiyan', 'azwad@abc.com', '123'),
-(2, 'Umme Hani', 'ummehani@abc.com', '121');
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `phone`) VALUES
+(1, 'Azwad Bhuiyan', 'azwad@abc.com', '$2y$10$5kWI6.BHPPS2I9RVRz.YW.WSD5CnO73rWP7nGKdRZNpNGd8rCZA3G', '01710000000'),
+(2, 'Farhan noor dehan', 'farhan@abc.com', '$2y$10$GsNTzZmbBHieMphaRXEpg.ZXSuwND0hDGq/Q61euee6sUJ9NmZn8W', '01800000000'),
+(3, 'azwad', 'azwad230@gmail.com', '$2y$10$Hmdwf0RvGGjplQQn42xJS.JiwR21Kcj0I/yKrp/ly48hLzThp0n0i', '01938599887'),
+(4, 'Umme Hani', 'ummehani@abc.com', '$2y$10$rf85EUMQ/XrQ0eZQRoe1XuAJDQGMM1SYJy7P5sqp6IxUW/3rZe54.', '01900000000');
 
 --
 -- Indexes for dumped tables
