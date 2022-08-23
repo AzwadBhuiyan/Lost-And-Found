@@ -11,7 +11,7 @@ class adminController extends Controller
     //
     public function load_adminDashboard()
     {
-        $results = DB::table('posts')->where('status', '!=', 'archived')->get();
+        $results = DB::table('posts')->get();
         $data['results'] = $results;
         return view('adminDashboard.posts', $data);
     }
@@ -22,6 +22,20 @@ class adminController extends Controller
             ->update([
                 'status' => 'archived',
             ]);
+        // alert('Title', 'Lorem Lorem Lorem', 'success')->position('top-end');
+
+
+        return redirect()->route('admin_Dashboard');
+    }
+
+    public function activate_post($id)
+    {
+        DB::table('posts')->where('id', $id)
+            ->update([
+                'status' => 'active',
+            ]);
+        // alert('Title', 'Lorem Lorem Lorem', 'success')->position('top-end');
+
 
         return redirect()->route('admin_Dashboard');
     }

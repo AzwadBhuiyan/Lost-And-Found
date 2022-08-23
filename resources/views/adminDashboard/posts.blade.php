@@ -55,7 +55,13 @@
                     <td>{{$item->phone}}</td>
                     <td>{{$item->email}}</td>
                     <td> <a href="{{ url('view_posts/'.$item->id) }}"><button type="button" class="btn btn-info">Details</button></a></td>
-                    <td> <a href="{{ url('archive_post/'.$item->id) }}"><button type="button" class="btn btn-warning">Archive</button></a> </td>
+
+                    @if($item->status == 'archived')         
+                    <td> <a href="{{ url('activate_post/'.$item->id) }}"><button type="button" class="btn btn-success">Activate</button></a> </td>         
+                    @else
+                    <td> <a href="{{ url('archive_post/'.$item->id) }}"><button type="button" class="btn btn-warning">Archive</button></a> </td>        
+                    @endif
+
                     <td> <a href="{{ url('delete/'.$item->id) }}"><button type="button" class="btn btn-danger">Delete</button></a> </td>
 
                 </tr>
