@@ -14,14 +14,15 @@
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
-                    <th>Date</th>
+                    {{-- <th>Date</th> --}}
                     <th>Urgent</th>
                     <th>Reported</th>
                     <th>Description</th>
                     <th>Location</th>
                     <th>Category</th>
                     <th>Phone</th>
-                    <th>Email</th>
+                    {{-- <th>Email</th> --}}
+                    <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -33,7 +34,7 @@
                 <tr>
                     <td>{{$item->id}}</td>
                     <td>{{$item->title}}</td>
-                    <td>{{$item->date}}</td>
+                    {{-- <td>{{$item->date}}</td> --}}
                     {{-- <td>{{$item->urgent}}</td> --}}
                     {{-- <td>{{$item->reported}}</td> --}}
 
@@ -53,7 +54,7 @@
                     <td>{{$item->location}}</td>
                     <td>{{$item->category}}</td>
                     <td>{{$item->phone}}</td>
-                    <td>{{$item->email}}</td>
+                    {{-- <td>{{$item->email}}</td> --}}
                     <td> <a href="{{ url('view_posts/'.$item->id) }}"><button type="button" class="btn btn-info">Details</button></a></td>
 
                     @if($item->status == 'archived')         
@@ -63,6 +64,12 @@
                     @endif
 
                     <td> <a href="{{ url('delete/'.$item->id) }}"><button type="button" class="btn btn-danger">Delete</button></a> </td>
+
+                    @if($item->urgent == false)
+                    <td> <a href="{{ url('make_urgent/'.$item->id) }}"><button type="button" class="btn btn-primary text-nowrap">Make Urgent</button></a> </td>
+                    @else
+                    <td> <a href="{{ url('revoke_urgency/'.$item->id) }}"><button type="button" class="btn btn-secondary text-nowrap">Revoke Urgency</button></a> </td>
+                    @endif
 
                 </tr>
             </tbody>

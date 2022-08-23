@@ -22,7 +22,7 @@ class adminController extends Controller
             ->update([
                 'status' => 'archived',
             ]);
-        // alert('Title', 'Lorem Lorem Lorem', 'success')->position('top-end');
+        toast('Archived successfully', 'success')->position('top-end');
 
 
         return redirect()->route('admin_Dashboard');
@@ -34,7 +34,31 @@ class adminController extends Controller
             ->update([
                 'status' => 'active',
             ]);
-        // alert('Title', 'Lorem Lorem Lorem', 'success')->position('top-end');
+        toast('Post updated successfully', 'success')->position('top-end');
+
+
+        return redirect()->route('admin_Dashboard');
+    }
+
+    public function make_urgent($id)
+    {
+        DB::table('posts')->where('id', $id)
+            ->update([
+                'urgent' => true,
+            ]);
+        toast('Post updated successfully', 'success')->position('top-end');
+
+
+        return redirect()->route('admin_Dashboard');
+    }
+
+    public function revoke_urgency($id)
+    {
+        DB::table('posts')->where('id', $id)
+            ->update([
+                'urgent' => false,
+            ]);
+        toast('Post updated successfully', 'success')->position('top-end');
 
 
         return redirect()->route('admin_Dashboard');

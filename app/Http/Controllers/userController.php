@@ -108,6 +108,7 @@ class userController extends Controller
     public function delete($id)
     {
         DB::table('posts')->where('id',  $id)->delete();
+        toast('Post Deleted successfully', 'success')->position('top-end');
 
         return redirect()->back();
     }

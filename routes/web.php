@@ -53,6 +53,8 @@ Route::post('/edit_post', [userController::class, 'editPost'])->name("edit_post"
 Route::get('/admin_dashboard', [adminController::class, 'load_adminDashboard'])->name("admin_Dashboard");
 Route::get('/archive_post/{id}', [adminController::class, 'archive_post'])->name("archive_post");
 Route::get('/activate_post/{id}', [adminController::class, 'activate_post'])->name("activate_post");
+Route::get('/make_urgent/{id}', [adminController::class, 'make_urgent'])->name("make_urgent");
+Route::get('/revoke_urgency/{id}', [adminController::class, 'revoke_urgency'])->name("revoke_urgency");
 
 //footer
 Route::get('/about', [globalController::class, 'load_aboutUs'])->name("load_aboutUs");
