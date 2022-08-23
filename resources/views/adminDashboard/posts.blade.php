@@ -24,7 +24,7 @@
                     {{-- <th>Email</th> --}}
                     <th></th>
                     <th></th>
-                    <th></th>
+                    <th>Actions</th>
                     <th></th>
 
                 </tr>
