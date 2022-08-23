@@ -92,7 +92,7 @@
             window.requestAnimationFrame(step);
         }
 
-        animatePostsCounter(document.getElementById("count"), 0, {{json_encode($foundPost)}}, 1000);
+        animatePostsCounter(document.getElementById("count"), 0, {{json_encode($foundPost)}}, 500);
     </script>
 
 
