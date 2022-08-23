@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class adminController extends Controller
 {
@@ -15,9 +16,9 @@ class adminController extends Controller
         return view('adminDashboard.posts', $data);
     }
 
-    public function archive_post(Request $req)
+    public function archive_post($id)
     {
-        DB::table('posts')->where('id', $req->id)
+        DB::table('posts')->where('id', $id)
             ->update([
                 'status' => 'archived',
             ]);

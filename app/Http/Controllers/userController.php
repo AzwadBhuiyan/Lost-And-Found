@@ -133,26 +133,22 @@ class userController extends Controller
             ]);
 
 
-            if (isset($req->img1)) {
-                $front_img_name = $req->id . "_1";
-                $req->img1->move(public_path('images'), $front_img_name . ".jpg");
-            }
-    
-            if (isset($req->img2)) {
-                $back_img_name = $req->id . "_2";
-                $req->img2->move(public_path('images'), $back_img_name . ".jpg");
-            }
-    
-            if (isset($req->img3)) {
-                $extra_img_name = $req->id . "_3";
-                $req->img3->move(public_path('images'), $extra_img_name . ".jpg");
-            }
+        if (isset($req->img1)) {
+            $front_img_name = $req->id . "_1";
+            $req->img1->move(public_path('images'), $front_img_name . ".jpg");
+        }
+
+        if (isset($req->img2)) {
+            $back_img_name = $req->id . "_2";
+            $req->img2->move(public_path('images'), $back_img_name . ".jpg");
+        }
+
+        if (isset($req->img3)) {
+            $extra_img_name = $req->id . "_3";
+            $req->img3->move(public_path('images'), $extra_img_name . ".jpg");
+        }
 
         $data['leftResults'] = DB::table('posts')->where('email',  session('email'))->get();
         return redirect()->route('user_Dashboard');
     }
-
-
-
-
 }
