@@ -70,10 +70,10 @@
                     @else
                     <td> <a href="{{ url('revoke_urgency/'.$item->id) }}"><button type="button" class="btn btn-secondary text-nowrap">Revoke Urgency</button></a> </td>
                     @endif
-
                 </tr>
+                @endforeach
             </tbody>
-            @endforeach
+            
         </table>
         
         </div>

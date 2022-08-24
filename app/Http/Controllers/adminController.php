@@ -9,7 +9,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 class adminController extends Controller
 {
     //
-    public function load_adminDashboard()
+    public function posts_dashboard()
     {
         $results = DB::table('posts')->get();
         $data['results'] = $results;
@@ -25,7 +25,7 @@ class adminController extends Controller
         toast('Archived successfully', 'success')->position('top-end');
 
 
-        return redirect()->route('admin_Dashboard');
+        return redirect()->route('posts_dashboard');
     }
 
     public function activate_post($id)
@@ -34,10 +34,10 @@ class adminController extends Controller
             ->update([
                 'status' => 'active',
             ]);
-        toast('Post updated successfully', 'success')->position('top-end');
+        toast('Post updated successfully', 'success')->position('top-end')->autoClose(2000);
 
 
-        return redirect()->route('admin_Dashboard');
+        return redirect()->route('posts_dashboard');
     }
 
     public function make_urgent($id)
@@ -46,10 +46,9 @@ class adminController extends Controller
             ->update([
                 'urgent' => true,
             ]);
-        toast('Post updated successfully', 'success')->position('top-end');
+        toast('Post updated successfully', 'success')->position('top-end')->autoClose(2000);
 
-
-        return redirect()->route('admin_Dashboard');
+        return redirect()->route('posts_dashboard');
     }
 
     public function revoke_urgency($id)
@@ -58,9 +57,21 @@ class adminController extends Controller
             ->update([
                 'urgent' => false,
             ]);
-        toast('Post updated successfully', 'success')->position('top-end');
+        toast('Post updated successfully', 'success')->position('top-end')->autoClose(2000);
 
 
-        return redirect()->route('admin_Dashboard');
+        return redirect()->route('posts_dashboard');
     }
+
+    public function load_messages()
+    {
+        $results = DB::table('message')->get();
+        $data['results'] = $results;
+        return view('adminDashboard.messages', $data);
+    }
+
+    // public static function read_message($id)
+    // {
+        
+    // }
 }
