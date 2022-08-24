@@ -65,8 +65,10 @@
 
                     @if($item->status == 'archived')         
                     <td> <a href="{{ url('activate_post/'.$item->id) }}"><button type="button" class="btn btn-success">Activate</button></a> </td>         
-                    @else
-                    <td> <a href="{{ url('archive_post/'.$item->id) }}"><button type="button" class="btn btn-warning">Archive</button></a> </td>        
+                    @elseif($item->status == 'active')
+                    <td> <a href="{{ url('archive_post/'.$item->id) }}"><button type="button" class="btn btn-warning">Archive</button></a> </td>
+                    @else        
+                    <td> <button type="button" class="btn btn-secondary" disabled>Archive</button> </td>        
                     @endif
 
                     <td> <a href="{{ url('delete/'.$item->id) }}"><button type="button" class="btn btn-danger">Delete</button></a> </td>
@@ -74,7 +76,7 @@
                     @if($item->urgent == false)
                     <td> <a href="{{ url('make_urgent/'.$item->id) }}"><button type="button" class="btn btn-primary text-nowrap">Make Urgent</button></a> </td>
                     @else
-                    <td> <a href="{{ url('revoke_urgency/'.$item->id) }}"><button type="button" class="btn btn-secondary text-nowrap">Revoke Urgency</button></a> </td>
+                    <td> <a href="{{ url('revoke_urgency/'.$item->id) }}"><button type="button" class="btn btn-dark text-nowrap">Revoke Urgency</button></a> </td>
                     @endif
                 </tr>
                 @endforeach
