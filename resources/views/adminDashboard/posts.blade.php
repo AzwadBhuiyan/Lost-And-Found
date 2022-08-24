@@ -19,6 +19,7 @@
                     <th>Reported</th>
                     <th>Description</th>
                     <th>Location</th>
+                    <th>Found</th>
                     <th>Category</th>
                     <th>Phone</th>
                     {{-- <th>Email</th> --}}
@@ -52,6 +53,11 @@
 
                     <td>{{$item->description}}</td>
                     <td>{{$item->location}}</td>
+                    @if($item->status == 'found')         
+                        <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" checked disabled></td>         
+                    @else
+                        <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled></td>        
+                    @endif
                     <td>{{$item->category}}</td>
                     <td>{{$item->phone}}</td>
                     {{-- <td>{{$item->email}}</td> --}}
