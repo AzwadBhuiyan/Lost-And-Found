@@ -28,6 +28,14 @@
             @csrf
             <div class="d-flex justify-content-around row-1">
                 <div class="w-50 d-flex justify-content-center">
+                    <select name="type" class="form-select mt-5" aria-label="Default select example" required>
+                        <option value="">Select</option>
+                        <option value="lostpost">I've Lost Something</option>
+                        <option value="foundpost">I've Found Something</option>
+                    </select>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
                     <select name="category" class="form-select mt-5" aria-label="Default select example" required>
                         <option value="">Category</option>
                         <option value="Electronics">Electronics</option>
@@ -62,9 +70,9 @@
         <div class="d-flex justify-content-center w-100">
             <div class="d-flex justify-content-around w-50 row-2">
                
-                <a class="btn btn-success px-5 py-3" href="/create_post" role="button">I've Lost Something</a>
+                <a class="btn btn-success px-5 py-3" href="/create_post/lostpost" role="button">I've Lost Something</a>
                 
-                <a class="btn btn-success px-5 py-3" href="/create_post" role="button">I've Found Something</a>
+                <a class="btn btn-success px-5 py-3" href="/create_post/foundpost" role="button">I've Found Something</a>
 
             </div>
         </div>

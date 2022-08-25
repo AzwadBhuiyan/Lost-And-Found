@@ -51,10 +51,7 @@
                 <li class="nav-item">
                     <a class="nav-link" style="{{ $style }}" href="/user_dashboard">Dashboard</a>
                 </li>
-                &nbsp;&nbsp;
-                <li class="nav-item">
-                    <a class="btn btn-primary" href="{{route('createPost_UI')}}">Create Post</a>
-                </li>
+                
             @elseif($data == 'create_post')
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>

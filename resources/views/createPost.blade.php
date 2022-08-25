@@ -60,6 +60,7 @@
                     <form action="{{ route('create_post') }}" class="needs-validation" method="POST" enctype="multipart/form-data" >
                    
                         @csrf
+                        <input type="hidden" value="{{$type}}">
                         <div>
                             <label for="file">Choose file to upload(Max size 2MB)</label> <br>
                             <input type="file" id="file" name="img1">
