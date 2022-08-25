@@ -115,6 +115,83 @@ integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCm
 
 
                     <!--//  -->  
+
+
+
+                     
+
+
+                        
+                        <!-- -->
+                        <!-- -->
+
+                        <div class="right_section">
+
+                          <!-- -->
+                          <!-- -->
+                          <div class="navleft_2"> 
+                            <p>Found Posts</p>
+                          </div>
+  
+                          @foreach ($foundResults as $item)
+  
+                          <a href="/view_posts/{{ $item->id }}" >
+                          
+                            
+                            <div class="card  text-white bg-success mb-3 m-4  cardDivfound " >
+                         
+                              <div class="row g-0">
+                                <div class="col-md-4">
+                                  <img src="./images/{{$item->id}}_1.jpg" class="img-fluid rounded-start limg"  alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="card-body ">
+                                    
+      
+                                    <div class="row ">
+                                      <div class="col-7 col-sm-4">
+                                        <h5 class="card-title lh-base">{{$item->title}}</h5>
+                                        <h6 class="text-opacity-70">Location:{{$item->location}}</h6>
+                                        
+                                      </div>
+                                      <div class="col-5  col-sm-8">
+                                        <p class="card-text d-flex justify-content-end"><small class="text-muted">{{$item->date}}</small></p>
+                                      </div>
+                                    </div>                            
+                                   
+                                    <p class="card-text   lh-sm  text-wrap">Description: {{$item->description}} </p>
+                                    
+      
+                                    
+      
+      
+                                     
+  
+                                    
+      
+      
+                                     
+                                  </div>
+                                </div>
+                              </div>                        
+                            </div>
+    
+                         
+                          </a>
+    
+    
+    
+                          @endforeach
+  
+  
+  
+  
+  
+  
+  
+                        </div>
+
+
              
 
 
@@ -138,7 +215,27 @@ integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCm
 
 
 
+         
+
+
+
+
+
+
+
+
+
+
+
     </section>
+
+
+
+
+
+
+
+    
    
   @extends('footer.footer')
 

@@ -254,6 +254,7 @@ p{
     padding: 8px;
     
 }
+
 .navleft p{
     color: blue;
     font-size: 20px;
@@ -263,6 +264,27 @@ p{
     
    
 }
+
+.navleft_2{
+    
+    text-align: center;    
+    width: auto;
+    height: 35px;
+    padding: 8px;
+    
+}
+
+.navleft_2 p{
+    color: rgb(26, 255, 0);
+    font-size: 20px;
+    line-height: 28px; 
+    letter-spacing: 1px;   
+    font-weight: 700;
+    
+   
+}
+
+
 
 
 .navright{
@@ -341,7 +363,7 @@ p{
     
   }
   
-
+  
   .left_section .card:hover{
     
     border-color:#0518e7;
@@ -356,6 +378,34 @@ p{
     
     
 }
+
+.cardDivfound .card{
+    border-color:#3cca08;
+    
+  }
+
+
+.left_section .cardDivfound.card:hover{
+    
+    border-color:#558206;
+    transition: 0.3s;
+    border-width: 3px;
+    
+    
+  }
+  .cardDivfound:hover{
+   
+    box-shadow: 0 4px 8px 0 rgba(92, 247, 15, 0.2), 0 6px 20px 0 rgba(119, 231, 6, 0.19);
+    
+    
+}
+.cardDivfound{
+    border: #3cca08;
+}
+
+
+
+
 a:link {
     
    

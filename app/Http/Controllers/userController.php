@@ -31,9 +31,15 @@ class userController extends Controller
 
     public function load_userDashboard()
     {
-        $user_result = DB::table('posts')->where('email',  session('email'))->get();
+       // $user_result = DB::table('posts')->where('email',  session('email'))->get();
+       $user_result = DB::table('posts')->where('email',  session('email'))->where('status',  'active')->get();
 
         $sendData['leftResults'] = $user_result;
+
+        $user_resultFound = DB::table('posts')->where('email',  session('email'))->where('status', 'found')->get();
+
+        $sendData['foundResults'] = $user_resultFound;
+
 
         return view('userDashboard', $sendData);
     }
@@ -108,7 +114,7 @@ class userController extends Controller
     public function delete($id)
     {
         DB::table('posts')->where('id',  $id)->delete();
-        toast('Post Deleted successfully', 'success')->position('top-end');
+      
 
         return redirect()->back();
     }
