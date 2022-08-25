@@ -17,6 +17,7 @@
                     {{-- <th>Date</th> --}}
                     <th>Urgent</th>
                     <th>Reported</th>
+                    <th>PostType</th>
                     <th>Description</th>
                     <th>Location</th>
                     <th>Found</th>
@@ -51,6 +52,12 @@
                         <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled></td>        
                     @endif
 
+                    @if($item->type == 'foundpost')
+                        <td><p class="">Found</p></td>
+                    @else
+                        <td><p class="">Lost</p></td>
+                    @endif
+
                     <td>{{$item->description}}</td>
                     <td>{{$item->location}}</td>
                     @if($item->status == 'found')         
@@ -60,6 +67,8 @@
                     @endif
                     <td>{{$item->category}}</td>
                     <td>{{$item->phone}}</td>
+                    {{-- <td>{{$item->type}}</td> --}}
+                    
                     {{-- <td>{{$item->email}}</td> --}}
                     <td> <a href="{{ url('view_posts/'.$item->id) }}"><button type="button" class="btn btn-info">Details</button></a></td>
 

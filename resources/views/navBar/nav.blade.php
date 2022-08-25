@@ -82,7 +82,23 @@
             @endif
 
 
-            @if (session()->has('user'))
+            @if (session()->has('user') && session('email') == 'azwad@abc.com') 
+                &nbsp;&nbsp;
+                &nbsp;&nbsp;
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color: #dfdfdf">
+                        {{ session('user') }}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+                        <li><a class="dropdown-item" href="/admin_posts_dashboard">Admin dashboard</a></li>
+                        {{-- <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
+                    </ul>
+                    &nbsp;&nbsp;
+                </div>
+                &nbsp;&nbsp;
+                &nbsp;
+            @elseif (session()->has('user'))
                 &nbsp;&nbsp;
                 &nbsp;&nbsp;
                 <div class="dropdown">

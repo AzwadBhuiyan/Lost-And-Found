@@ -1,12 +1,7 @@
 @extends('layouts.adminDashboard')
 @section('name', 'Message Dashboard')
 
-{{-- @php 
 
-use App\Http\Controllers\adminController; 
-$var = 
-
-@endphp --}}
 
 @section('content')
     
