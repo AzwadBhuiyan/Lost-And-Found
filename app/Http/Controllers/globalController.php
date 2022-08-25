@@ -138,7 +138,8 @@ class globalController extends Controller
     public function load_searchResults(Request $req)
     {
         $result = DB::table('posts')->where('category', $req->category)
-            ->where('location', $req->location)->where('status', '!=', 'archived')->where('urgent', false)->get();
+            ->where('location', $req->location)->where('status', '!=', 'archived')->where('status', '!=', 'found')
+            ->where('type', '!=', $req->type)->where('urgent', false)->get();
         // dd($result);
 
         $search_text = explode(' ', $req->search_text);

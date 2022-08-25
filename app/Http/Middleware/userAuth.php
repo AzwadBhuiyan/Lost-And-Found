@@ -17,7 +17,7 @@ class userAuth
     public function handle(Request $request, Closure $next)
     {
         if(!session()->has('email')){
-            return redirect()->route('homePage');
+            return redirect()->route('loadLogin');
         }
         return $next($request);
     }

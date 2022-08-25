@@ -58,7 +58,7 @@
 
 
                 <div class="navleft">
-                    <p>Search Results</p>
+                   <p> <span class="text-danger"> {{count($leftResults)}}</span><span> Search Results</span></p>
                 </div>
 
 

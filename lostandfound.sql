@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Aug 20, 2022 at 11:41 PM
+-- Generation Time: Aug 26, 2022 at 01:02 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -39,7 +39,8 @@ CREATE TABLE `message` (
 
 INSERT INTO `message` (`id`, `email`, `message`) VALUES
 (1, 'farhan@mail.com', 'Hello, I want to make an urgent post. How can I do it?'),
-(2, 'mursalin@abc.com', 'I just wanted to thank you for making our life easier. This website is great');
+(2, 'mursalin@abc.com', 'I just wanted to thank you for making our life easier. This website is great'),
+(3, 'azwad@abc.com', 'this is message');
 
 -- --------------------------------------------------------
 
@@ -99,25 +100,26 @@ CREATE TABLE `posts` (
   `status` set('archived','active','found') COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `show_email` tinyint(1) NOT NULL
+  `show_email` tinyint(1) NOT NULL,
+  `type` set('lostpost','foundpost') COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `date`, `urgent`, `reported`, `description`, `location`, `category`, `status`, `phone`, `email`, `show_email`) VALUES
-(1, 'iphone 8', '2022-08-09', 0, 0, 'this iPhone was lost at bashundhara R/a', 'Dhaka', 'Electronics', 'active', '01938599887', 'azwad@abc.com', 1),
-(2, 'iphone 8', '2022-07-11', 0, 0, 'iphone 8 pink color lost in bashundhara R/A road 2', 'Dhaka', 'Electronics', 'found', '', '', 0),
-(3, 'IUB id card', '2021-12-09', 0, 0, 'id card lost in IUB. Name: \r\n Abdul Azwad Bhuiyan. Department CSC. Blood group: B+', 'Dhaka', 'Documents', 'active', '', '', 0),
-(4, 'IUB admission form', '2022-06-28', 0, 0, 'admission form of IUB with student name Yeard', 'Dhaka', 'Documents', 'found', '', '', 0),
-(5, 'Black kitten', '2021-09-29', 0, 0, 'Black kitten lost in block D Bashundhara R/A. Color Black, Age 2-3months. Eye color green', 'Khulna', 'Pet and Animals', 'active', '', '', 0),
-(6, 'iphone 11 pro max', '2022-04-28', 0, 1, 'Green iphone 11 pro max imei: 121232677', 'Dhaka', 'Electronics', 'active', '', '', 0),
-(7, 'leather bags', '2021-12-25', 0, 0, 'dasdasdasdas', 'Chittagong', 'Documents', 'found', '01855599911', 'azwad@abc.com', 1),
-(8, 'iphone 12 pro max', '2021-09-16', 1, 1, 'sdasdas', 'Dhaka', 'Electronics', 'found', '01300000147', 'azwad@abc.com', 0),
-(9, 'birth certificate', '2022-07-05', 1, 0, 'Birth certificate lost in khilgaon road 2. Name: Umme Hani', 'Chittagong', 'Documents', 'found', '', '', 0),
-(10, 'voter id card', '2021-09-10', 1, 0, 'Voter ID card lost in sonadanga. Name: Farhan, Blood group A+', 'Khulna', 'Documents', 'active', '', '', 0),
-(11, 'Samsung S20 FE', '2022-08-12', 1, 0, 'This phone was lost in new market. ', 'Dhaka', 'Electronics', 'active', '01825856542', 'azwad_bhuiyan@lostandfound.com', 0);
+INSERT INTO `posts` (`id`, `title`, `date`, `urgent`, `reported`, `description`, `location`, `category`, `status`, `phone`, `email`, `show_email`, `type`) VALUES
+(1, 'iphone 8', '2022-08-09', 0, 0, 'this iPhone was lost at bashundhara R/a', 'Dhaka', 'Electronics', 'active', '01938599887', 'azwad@abc.com', 1, 'lostpost'),
+(2, 'iphone 8', '2022-07-11', 0, 0, 'iphone 8 pink color lost in bashundhara R/A road 2', 'Dhaka', 'Electronics', 'found', '012345678', 'farhan@xmail.com', 0, 'lostpost'),
+(3, 'IUB id card', '2021-12-09', 0, 0, 'id card lost in IUB. Name: \r\n Abdul Azwad Bhuiyan. Department CSC. Blood group: B+', 'Dhaka', 'Documents', 'active', '', '', 0, 'lostpost'),
+(4, 'IUB admission form', '2022-06-28', 0, 0, 'admission form of IUB with student name Yeard', 'Dhaka', 'Documents', 'found', '', '', 0, 'foundpost'),
+(5, 'Black kitten', '2021-09-29', 0, 0, 'A Black kitten was found in block D Bashundhara R/A. Color Black, Age 2-3months. Eye color green. Let me know if this is your kitten.', 'Khulna', 'Pet and Animals', 'active', '', '', 0, 'foundpost'),
+(6, 'iphone 11 pro max', '2022-04-28', 0, 1, 'Green iphone 11 pro max imei: 121232677', 'Dhaka', 'Electronics', 'active', '', '', 0, 'lostpost'),
+(7, 'leather bag', '2021-12-25', 0, 0, 'A leather bag was found in the IUB cafeteria', 'Chittagong', 'Documents', 'found', '01855599911', 'azwad@abc.com', 1, 'foundpost'),
+(8, 'iphone 12 pro max', '2021-09-16', 1, 1, 'sdasdas', 'Dhaka', 'Electronics', 'found', '01300000147', 'azwad@abc.com', 0, 'lostpost'),
+(9, 'birth certificate', '2022-07-05', 1, 0, 'Birth certificate lost in khilgaon road 2. Name: Umme Hani', 'Chittagong', 'Documents', 'found', '', '', 0, 'lostpost'),
+(10, 'voter id card', '2021-09-10', 1, 0, 'Voter ID card lost in sonadanga. Name: Farhan, Blood group A+', 'Khulna', 'Documents', 'active', '', '', 0, 'foundpost'),
+(11, 'Samsung S20 FE', '2022-08-12', 1, 0, 'This phone was lost in new market. ', 'Dhaka', 'Electronics', 'active', '01825856542', 'azwad_bhuiyan@lostandfound.com', 0, 'lostpost');
 
 -- --------------------------------------------------------
 
@@ -187,7 +189,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -205,7 +207,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user`

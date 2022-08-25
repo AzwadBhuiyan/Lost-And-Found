@@ -15,9 +15,10 @@ class userController extends Controller
         $this->middleware('userAuth');
     }
 
-    public function load_createPost()
+    public function load_createPost($type)
     {
-        return view('createPost');
+      $data['type']= $type;
+        return view('createPost',$data);
     }
 
 
@@ -74,6 +75,7 @@ class userController extends Controller
             'phone' => $req->phone_number,
             'email' => session('email'),
             'show_email' => $show_email,
+            'type' => $req->type
         ]);
 
 
