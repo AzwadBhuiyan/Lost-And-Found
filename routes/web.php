@@ -50,9 +50,13 @@ Route::get('/delete/{id}', [userController::class, 'delete'])->name("delete");
 Route::post('/edit_post', [userController::class, 'editPost'])->name("edit_post");
 
 //admin
-Route::get('/admin_dashboard', [adminController::class, 'load_adminDashboard'])->name("admin_Dashboard");
+Route::get('/admin_posts_dashboard', [adminController::class, 'posts_dashboard'])->name("posts_dashboard");
+Route::get('/admin_messages_dashboard', [adminController::class, 'load_messages'])->name("load_messages");
 Route::get('/archive_post/{id}', [adminController::class, 'archive_post'])->name("archive_post");
 Route::get('/activate_post/{id}', [adminController::class, 'activate_post'])->name("activate_post");
+Route::get('/make_urgent/{id}', [adminController::class, 'make_urgent'])->name("make_urgent");
+Route::get('/revoke_urgency/{id}', [adminController::class, 'revoke_urgency'])->name("revoke_urgency");
+// Route::get('/read_message/{id}', [adminController::class, 'read_message'])->name("read_message");
 
 //footer
 Route::get('/about', [globalController::class, 'load_aboutUs'])->name("load_aboutUs");
