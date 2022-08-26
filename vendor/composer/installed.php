@@ -5,11 +5,20 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b0aac6cf38798168b9df63eb31563ebab8c80706',
+        'reference' => '9eb169ff151011b9968c51a6f9ababd5d97c9e26',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'arielmejiadev/larapex-charts' => array(
+            'pretty_version' => '4.1.0',
+            'version' => '4.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../arielmejiadev/larapex-charts',
+            'aliases' => array(),
+            'reference' => '9e1f7e08cb5a5fa662ff8c83464d8e78379b4031',
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.9.3',
             'version' => '0.9.3.0',
@@ -415,7 +424,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b0aac6cf38798168b9df63eb31563ebab8c80706',
+            'reference' => '9eb169ff151011b9968c51a6f9ababd5d97c9e26',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

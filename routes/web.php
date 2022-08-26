@@ -56,6 +56,7 @@ Route::get('/archive_post/{id}', [adminController::class, 'archive_post'])->name
 Route::get('/activate_post/{id}', [adminController::class, 'activate_post'])->name("activate_post");
 Route::get('/make_urgent/{id}', [adminController::class, 'make_urgent'])->name("make_urgent");
 Route::get('/revoke_urgency/{id}', [adminController::class, 'revoke_urgency'])->name("revoke_urgency");
+Route::get('/usage_report', [adminController::class, 'usage_report'])->name("usage_report");
 // Route::get('/read_message/{id}', [adminController::class, 'read_message'])->name("read_message");
 
 //footer
