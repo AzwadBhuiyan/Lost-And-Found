@@ -23,7 +23,7 @@
 </div> --}}
 
 <div class="row py-10">
-    <div class="col-sm-6">
+    <div class="col-sm-5">
       <div class="card">
         <div class="card-body">
           {{-- <h5 class="card-title">Special title treatment</h5>
