@@ -58,7 +58,7 @@ class userController extends Controller
 
 
     public function create_post(Request $req)
-    {
+    { 
         $show_email = false;
         $urgent = false;
 
@@ -81,7 +81,7 @@ class userController extends Controller
             'phone' => $req->phone_number,
             'email' => session('email'),
             'show_email' => $show_email,
-            'type' => $req->type
+            'type' => $req->type,
         ]);
 
 
